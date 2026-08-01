@@ -3,274 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIA BẢO STORE - SHOP GAME UY TÍN</title>
+    <title>SHOP IDOL VIP - TOOL HACK & ACC FF/LQ UY TÍN SỐ 1</title>
+    <!-- FontAwesome icon & Font Google -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #0f172a;
-            color: #f8fafc;
-            padding-bottom: 50px;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+        body { background-color: #0f1015; color: #fff; }
+        
         /* Header */
-        header {
-            background: linear-gradient(135deg, #1e293b, #0f172a);
-            padding: 20px;
-            text-align: center;
-            border-bottom: 2px solid #3b82f6;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-        }
+        header { background: linear-gradient(90deg, #1f1c2c, #928dab); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #ff4757; }
+        .logo { font-size: 24px; font-weight: 900; color: #ff4757; text-transform: uppercase; text-shadow: 0 0 10px #ff4757; }
+        .user-panel { display: flex; align-items: center; gap: 15px; }
+        .balance-box { background: #1e1f29; padding: 8px 15px; border-radius: 20px; border: 1px solid #2ed573; font-weight: bold; color: #2ed573; }
+        .btn { padding: 8px 16px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .btn-primary { background: #ff4757; color: white; }
+        .btn-primary:hover { background: #ff6b81; box-shadow: 0 0 10px #ff4757; }
+        .btn-success { background: #2ed573; color: white; }
 
-        header h1 {
-            color: #38bdf8;
-            font-size: 28px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        /* Banner Marquee */
+        .alert-bar { background: #ff4757; color: white; padding: 8px; font-weight: bold; font-size: 14px; text-align: center; }
 
-        header p {
-            color: #94a3b8;
-            font-size: 14px;
-            margin-top: 5px;
-        }
+        /* Main Content */
+        .container { max-width: 1200px; margin: 20px auto; padding: 0 15px; }
+        .section-title { font-size: 22px; margin: 20px 0 10px; color: #ffa502; text-transform: uppercase; border-left: 4px solid #ffa502; padding-left: 10px; }
 
-        /* Container */
-        .container {
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 15px;
-        }
+        /* Grid Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { background: #181920; border: 1px solid #2f3542; border-radius: 10px; padding: 15px; text-align: center; position: relative; overflow: hidden; }
+        .card:hover { border-color: #ff4757; transform: translateY(-3px); transition: 0.3s; }
+        .card img { width: 100%; height: 150px; object-fit: cover; border-radius: 5px; }
+        .card h3 { font-size: 16px; margin: 10px 0; color: #eccc68; }
+        .price { color: #2ed573; font-size: 18px; font-weight: bold; margin-bottom: 10px; }
+        .old-price { text-decoration: line-through; color: #a4b0be; font-size: 14px; }
 
-        .section-title {
-            font-size: 22px;
-            margin-bottom: 20px;
-            color: #38bdf8;
-            border-left: 4px solid #3b82f6;
-            padding-left: 10px;
-        }
+        /* Modal Popup */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; }
+        .modal-content { background: #1e1f29; width: 90%; max-width: 400px; padding: 25px; border-radius: 10px; position: relative; border: 1px solid #ff4757; }
+        .close-btn { position: absolute; top: 10px; right: 15px; font-size: 20px; cursor: pointer; color: #a4b0be; }
+        .form-group { margin-bottom: 15px; text-align: left; }
+        .form-group label { display: block; margin-bottom: 5px; font-size: 14px; }
+        .form-group input, .form-group select { width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #2f3542; background: #0f1015; color: white; }
 
-        /* Product Grid */
-        .grid-products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background-color: #1e293b;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #334155;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
-        }
-
-        .card img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-        }
-
-        .card-body {
-            padding: 15px;
-        }
-
-        .card-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: #f1f5f9;
-        }
-
-        .card-desc {
-            font-size: 13px;
-            color: #94a3b8;
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
-
-        .price {
-            font-size: 18px;
-            color: #4ade80;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .btn-buy {
-            width: 100%;
-            background-color: #2563eb;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 6px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .btn-buy:hover {
-            background-color: #1d4ed8;
-        }
-
-        /* Modal Popup Thanh Toán */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .modal-content {
-            background-color: #1e293b;
-            padding: 25px;
-            border-radius: 12px;
-            max-width: 400px;
-            width: 90%;
-            text-align: center;
-            border: 1px solid #3b82f6;
-            position: relative;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 10px; right: 15px;
-            font-size: 20px;
-            color: #94a3b8;
-            cursor: pointer;
-        }
-
-        .qr-img {
-            width: 220px;
-            height: 220px;
-            margin: 15px 0;
-            border-radius: 8px;
-            border: 2px solid #fff;
-            background-color: #fff;
-        }
-
-        .bank-info {
-            background: #0f172a;
-            padding: 12px;
-            border-radius: 6px;
-            font-size: 14px;
-            text-align: left;
-            margin-top: 10px;
-        }
-
-        .bank-info p {
-            margin: 5px 0;
-        }
+        /* Toast notification */
+        #toast { visibility: hidden; min-width: 250px; background-color: #2ed573; color: #fff; text-align: center; border-radius: 5px; padding: 16px; position: fixed; z-index: 2000; right: 30px; bottom: 30px; font-weight: bold; box-shadow: 0 0 10px rgba(0,0,0,0.5); }
+        #toast.show { visibility: visible; animation: fadein 0.5s, fadeout 0.5s 2.5s; }
+        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
     </style>
 </head>
 <body>
 
     <!-- Header -->
     <header>
-        <h1>GIA BẢO STORE</h1>
-        <p>Hệ Thống Phân Phối File & Dịch Vụ Game Uy Tín</p>
+        <div class="logo"><i class="fa-solid fa-fire"></i> SHOP IDOL VIP</div>
+        <div class="user-panel">
+            <div class="balance-box"><i class="fa-solid fa-wallet"></i> Số dư: <span id="userBalance">0</span>đ</div>
+            <button class="btn btn-success" onclick="openModal('napTienModal')"><i class="fa-solid fa-plus"></i> Nạp Tiền</button>
+            <button class="btn btn-primary" id="authBtn" onclick="openModal('authModal')">Đăng Nhập</button>
+        </div>
     </header>
 
-    <!-- Main Container -->
+    <!-- Thông báo chạy chữ -->
+    <div class="alert-bar">
+        <marquee behavior="scroll" direction="left">
+            🔥 MUA FILE AIM ASSIST & TOOL HACK BAO ANTI-BAN 100% - NẠP THẺ CỘNG TỰ ĐỘNG SAU 1 GIÂY - BẢO HÀNH ACC 1 ĐỔI 1 🔥
+        </marquee>
+    </div>
+
     <div class="container">
-        <h2 class="section-title">SẢN PHẨM NỔI BẬT</h2>
-        
-        <div class="grid-products">
-            <!-- Sản phẩm 1 -->
+        <!-- Danh mục File & Tool -->
+        <h2 class="section-title"><i class="fa-solid fa-crosshair"></i> FILE & TOOL HACK (ANDROID / IOS)</h2>
+        <div class="grid">
             <div class="card">
-                <img src="https://via.placeholder.com/300x160/1e293b/38bdf8?text=FILE+CONFIG+FF" alt="File Config">
-                <div class="card-body">
-                    <div class="card-title">File Config Kéo Tâm VIP</div>
-                    <div class="card-desc">Hỗ trợ ghìm tâm, tăng nhạy full dòng máy Android & iOS. An toàn 100%.</div>
-                    <div class="price">50.000 VNĐ</div>
-                    <button class="btn-buy" onclick="openPayment('File Config Kéo Tâm VIP', '50000')">MUA NGAY</button>
-                </div>
+                <img src="https://via.placeholder.com/300x150/1e1f29/ff4757?text=Aim+Assist+FF" alt="File Aim">
+                <h3>File Aim Assist FF (Khóa Đầu)</h3>
+                <div class="price">49.000đ <span class="old-price">150.000đ</span></div>
+                <button class="btn btn-primary" onclick="buyProduct('File Aim Assist FF', 49000)">MUA NGAY</button>
             </div>
-
-            <!-- Sản phẩm 2 -->
             <div class="card">
-                <img src="https://via.placeholder.com/300x160/1e293b/38bdf8?text=MOD+SKIN+FF" alt="Mod Skin">
-                <div class="card-body">
-                    <div class="card-title">Gói Mod Full Skin Gun</div>
-                    <div class="card-desc">Mod full trang phục và hiệu ứng súng vip. Cài đặt cực dễ qua 1 click.</div>
-                    <div class="price">100.000 VNĐ</div>
-                    <button class="btn-buy" onclick="openPayment('Gói Mod Full Skin Gun', '100000')">MUA NGAY</button>
-                </div>
+                <img src="https://via.placeholder.com/300x150/1e1f29/2ed573?text=Tool+Hack+FF+Menu" alt="Tool FF">
+                <h3>Tool Hack FF VIP (Menu Full)</h3>
+                <div class="price">99.000đ <span class="old-price">300.000đ</span></div>
+                <button class="btn btn-primary" onclick="buyProduct('Tool Hack FF VIP', 99000)">MUA NGAY</button>
             </div>
-
-            <!-- Sản phẩm 3 -->
             <div class="card">
-                <img src="https://via.placeholder.com/300x160/1e293b/38bdf8?text=BANG+NHAY+VIP" alt="Bảng Nhạy">
-                <div class="card-body">
-                    <div class="card-title">Bảng Nhạy Đội Tuyển Pro</div>
-                    <div class="card-desc">Thông số độ nhạy độc quyền tối ưu cho từng dòng máy điện thoại.</div>
-                    <div class="price">20.000 VNĐ</div>
-                    <button class="btn-buy" onclick="openPayment('Bảng Nhạy Đội Tuyển Pro', '20000')">MUA NGAY</button>
-                </div>
+                <img src="https://via.placeholder.com/300x150/1e1f29/ffa502?text=Hack+Map+LQ" alt="Tool Liên Quân">
+                <h3>Tool Hack Liên Quân (Map + Skill)</h3>
+                <div class="price">79.000đ <span class="old-price">250.000đ</span></div>
+                <button class="btn btn-primary" onclick="buyProduct('Tool Hack Liên Quân', 79000)">MUA NGAY</button>
+            </div>
+        </div>
+
+        <!-- Danh mục Acc -->
+        <h2 class="section-title"><i class="fa-solid fa-gamepad"></i> KHO ACC VIP FLASHSALE</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x150/1e1f29/ff4757?text=Acc+FF+M%C3%A3ng+X%C3%A0" alt="Acc FF">
+                <h3>Acc FF Full Mãng Xà + Quỷ Dạ Xoa</h3>
+                <div class="price">50.000đ <span class="old-price">200.000đ</span></div>
+                <button class="btn btn-primary" onclick="buyProduct('Acc FF Mãng Xà', 50000)">MUA NGAY</button>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x150/1e1f29/2ed573?text=Acc+LQ+Th%C3%A1ch+%C4%90%E1%BA%A5u" alt="Acc LQ">
+                <h3>Acc LQ Full Tướng + 50 Skin SS</h3>
+                <div class="price">100.000đ <span class="old-price">500.000đ</span></div>
+                <button class="btn btn-primary" onclick="buyProduct('Acc LQ Full Tướng', 100000)">MUA NGAY</button>
             </div>
         </div>
     </div>
 
-    <!-- Modal Thanh Toán QR -->
-    <div class="modal" id="paymentModal">
+    <!-- Modal Đăng Ký / Đăng Nhập -->
+    <div class="modal" id="authModal">
         <div class="modal-content">
-            <span class="close-btn" onclick="closePayment()">&times;</span>
-            <h3 style="color: #38bdf8;">XÁC NHẬN THANH TOÁN</h3>
-            <p id="productName" style="margin-top: 5px; font-weight: bold;"></p>
-            
-            <!-- Mã QR Động ZaloPay -->
-            <img id="qrCode" class="qr-img" src="" alt="Mã QR Thanh Toán ZaloPay">
-
-            <div class="bank-info">
-                <p><strong>Phương thức:</strong> Ví ZaloPay</p>
-                <p><strong>Số điện thoại:</strong> 0964703874</p>
-                <p><strong>Chủ tài khoản:</strong> SON GIA BAO</p>
-                <p><strong>Số tiền:</strong> <span id="productPrice" style="color:#4ade80; font-weight:bold;"></span></p>
-                <p><strong>Nội dung CK:</strong> <span id="transferContent" style="color:#f59e0b; font-weight:bold;"></span></p>
-            </div>
-            <p style="font-size: 12px; color: #94a3b8; margin-top: 10px;">Quét mã bằng app Zalo / ZaloPay. Chuyển xong chụp bill gửi Zalo admin để nhận link tải!</p>
+            <span class="close-btn" onclick="closeModal('authModal')">&times;</span>
+            <h2 style="text-align: center; margin-bottom: 20px; color: #ff4757;" id="modalAuthTitle">ĐĂNG NHẬP</h2>
+            <form id="authForm" onsubmit="handleAuth(event)">
+                <div class="form-group">
+                    <label>Tài khoản</label>
+                    <input type="text" id="username" placeholder="Nhập tài khoản..." required>
+                </div>
+                <div class="form-group">
+                    <label>Mật khẩu</label>
+                    <input type="password" id="password" placeholder="Nhập mật khẩu..." required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 12px;" id="authSubmitBtn">XÁC NHẬN</button>
+            </form>
+            <p style="text-align: center; margin-top: 15px; font-size: 14px; cursor: pointer; color: #ffa502;" onclick="toggleAuthMode()">
+                <span id="toggleAuthText">Chưa có tài khoản? Đăng ký ngay!</span>
+            </p>
         </div>
     </div>
+
+    <!-- Modal Nạp Tiền Auto 1s -->
+    <div class="modal" id="napTienModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('napTienModal')">&times;</span>
+            <h2 style="text-align: center; margin-bottom: 20px; color: #2ed573;">NẠP THẺ TỰ ĐỘNG (1S)</h2>
+            <form onsubmit="handleNapTien(event)">
+                <div class="form-group">
+                    <label>Loại Thẻ</label>
+                    <select required>
+                        <option value="VIETTEL">Viettel</option>
+                        <option value="VINAPHONE">Vinaphone</option>
+                        <option value="MOBIFONE">Mobifone</option>
+                        <option value="ZING">Thẻ Zing</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Mệnh Giá</label>
+                    <select id="menhGia" required>
+                        <option value="10000">10.000đ</option>
+                        <option value="20000">20.000đ</option>
+                        <option value="50000">50.000đ</option>
+                        <option value="100000">100.000đ</option>
+                        <option value="500000">500.000đ</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Mã Thẻ</label>
+                    <input type="text" placeholder="Nhập mã thẻ..." required>
+                </div>
+                <div class="form-group">
+                    <label>Số Seri</label>
+                    <input type="text" placeholder="Nhập số seri..." required>
+                </div>
+                <button type="submit" class="btn btn-success" style="width: 100%; padding: 12px;" id="btnNap">NẠP NGAY (AUTO 1S)</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Thông Báo -->
+    <div id="toast">Thông báo ở đây!</div>
 
     <script>
-        function openPayment(name, price) {
-            document.getElementById('productName').innerText = name;
-            document.getElementById('productPrice').innerText = parseInt(price).toLocaleString('vi-VN') + ' VNĐ';
-            
-            // Tạo nội dung chuyển khoản tự động
-            const content = 'GIABAO ' + Math.floor(1000 + Math.random() * 9000);
-            document.getElementById('transferContent').innerText = content;
+        let currentBalance = 0;
+        let isLoggedIn = false;
+        let isLoginMode = true;
 
-            // Cấu hình mã QR ZaloPay / VietQR tự động điền sẵn số tiền và nội dung
-            const accountNo = '84964703874'; // Định dạng SĐT quốc tế cho ZaloPay
-            const qrUrl = `https://img.vietqr.io/image/ZALOPAY-${accountNo}-compact2.png?amount=${price}&addInfo=${encodeURIComponent(content)}&accountName=SON%20GIA%20BAO`;
-            
-            document.getElementById('qrCode').src = qrUrl;
-            document.getElementById('paymentModal').style.display = 'flex';
+        // Modal Controls
+        function openModal(id) { document.getElementById(id).style.display = 'flex'; }
+        function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+
+        // Switch Login/Register
+        function toggleAuthMode() {
+            isLoginMode = !isLoginMode;
+            document.getElementById('modalAuthTitle').innerText = isLoginMode ? 'ĐĂNG NHẬP' : 'ĐĂNG KÝ TÀI KHOẢN';
+            document.getElementById('authSubmitBtn').innerText = isLoginMode ? 'XÁC NHẬN' : 'TẠO TÀI KHOẢN';
+            document.getElementById('toggleAuthText').innerText = isLoginMode ? 'Chưa có tài khoản? Đăng ký ngay!' : 'Đã có tài khoản? Đăng nhập!';
         }
 
-        function closePayment() {
-            document.getElementById('paymentModal').style.display = 'none';
+        // Fake Login/Register
+        function handleAuth(e) {
+            e.preventDefault();
+            const user = document.getElementById('username').value;
+            isLoggedIn = true;
+            document.getElementById('authBtn').innerText = 'Hi, ' + user;
+            document.getElementById('authBtn').onclick = null;
+            closeModal('authModal');
+            showToast(isLoginMode ? 'Đăng nhập thành công!' : 'Đăng ký thành công!');
         }
 
-        window.onclick = function(event) {
-            const modal = document.getElementById('paymentModal');
-            if (event.target == modal) {
-                closePayment();
+        // Nạp tiền Tự Động 1S (Simulate Auto API)
+        function handleNapTien(e) {
+            e.preventDefault();
+            if (!isLoggedIn) {
+                alert('Vui lòng đăng nhập trước khi nạp tiền!');
+                closeModal('napTienModal');
+                openModal('authModal');
+                return;
             }
+
+            const btn = document.getElementById('btnNap');
+            const amount = parseInt(document.getElementById('menhGia').value);
+            
+            btn.innerText = 'Đang gạch thẻ (1s)...';
+            btn.disabled = true;
+
+            // Xử lý đúng 1 giây (1000ms)
+            setTimeout(() => {
+                currentBalance += amount;
+                document.getElementById('userBalance').innerText = currentBalance.toLocaleString('vi-VN');
+                btn.innerText = 'NẠP NGAY (AUTO 1S)';
+                btn.disabled = false;
+                closeModal('napTienModal');
+                showToast(`Nạp thành công +${amount.toLocaleString('vi-VN')}đ (Auto 1s)!`);
+            }, 1000);
+        }
+
+        // Mua Hàng
+        function buyProduct(name, price) {
+            if (!isLoggedIn) {
+                showToast('Bạn cần đăng nhập để mua hàng!');
+                openModal('authModal');
+                return;
+            }
+            if (currentBalance < price) {
+                showToast('Số dư không đủ! Vui lòng nạp thêm.');
+                openModal('napTienModal');
+                return;
+            }
+            currentBalance -= price;
+            document.getElementById('userBalance').innerText = currentBalance.toLocaleString('vi-VN');
+            alert(`Thành công! Link tải/Thông tin ${name} của bạn: https://shopidol.vn/download/key_demo_123456`);
+            showToast('Thanh toán thành công!');
+        }
+
+        // Toast Notification Function
+        function showToast(msg) {
+            const toast = document.getElementById("toast");
+            toast.innerText = msg;
+            toast.className = "show";
+            setTimeout(() => { toast.className = toast.className.replace("show", ""); }, 3000);
         }
     </script>
 </body>
