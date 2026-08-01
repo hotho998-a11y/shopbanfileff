@@ -3,509 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHOP GIA BẢO - Thiên Đường Account Game</title>
-    <!-- Nhúng Bootstrap 5 để hỗ trợ bố cục nhanh -->
+    <title>HỆ THỐNG XÁC NHẬN DỊCH VỤ & DANH SÁCH UY TÍN</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Nhúng Font Awesome để lấy icon -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* TÙY CHỈNH THEME MÀU SẮC CHỦ ĐẠO (ĐEN - ĐỎ - VÀNG) */
         :root {
-            --bg-color: #0b0c10;
-            --bg-card: #1f2833;
-            --primary-color: #e50914; /* Đỏ rực rỡ */
-            --secondary-color: #f5c518; /* Vàng kim loại */
-            --text-color: #ffffff;
-            --text-muted: #c5c6c7;
-            --accent-color: #66fcf1; /* Màu xanh neon tạo điểm nhấn */
+            --bg-main: #0f172a;
+            --card-bg: #1e293b;
+            --accent-gold: #f59e0b;
+            --accent-green: #10b981;
+            --text-light: #f8fafc;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            overflow-x: hidden; /* Ngăn chặn cuộn ngang */
+            background-color: var(--bg-main);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-bottom: 50px;
         }
 
-        /* 1. HEADER & NAVBAR - THIẾT KẾ HIỆN ĐẠI */
-        header {
-            background-color: #1a1e24;
-            border-bottom: 2px solid var(--primary-color);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 8px rgba(229, 9, 20, 0.3);
-        }
-
-        .navbar-brand {
-            font-size: 28px;
-            font-weight: 900;
-            color: var(--primary-color) !important;
-            text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(229, 9, 20, 0.7);
-        }
-
-        .navbar-brand span {
-            color: var(--secondary-color);
-        }
-
-        .nav-link {
-            color: var(--text-color) !important;
-            font-weight: 600;
-            text-transform: uppercase;
-            margin: 0 10px;
-            transition: 0.3s;
-        }
-
-        .nav-link:hover {
-            color: var(--secondary-color) !important;
-            transform: scale(1.05);
-        }
-
-        .btn-action {
-            font-weight: bold;
-            text-transform: uppercase;
-            padding: 8px 20px;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        .btn-login {
-            background-color: var(--primary-color);
-            color: white;
-            border: 2px solid var(--primary-color);
-        }
-
-        .btn-login:hover {
-            background-color: transparent;
-            color: var(--primary-color);
-        }
-
-        .btn-register {
-            background-color: transparent;
-            color: var(--accent-color);
-            border: 2px solid var(--accent-color);
-        }
-
-        .btn-register:hover {
-            background-color: var(--accent-color);
-            color: var(--bg-color);
-        }
-
-        /* 2. ANNOUNCEMENT MARQUEE - HIỆU ỨNG LED CHẠY */
-        .marquee-container {
-            background-color: #1a1e24;
-            color: var(--secondary-color);
-            padding: 10px 0;
-            font-weight: bold;
-            border-bottom: 1px solid #333;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-
-        .marquee-text {
-            display: inline-block;
-            animation: marquee 20s linear infinite;
-            font-size: 15px;
-        }
-
-        @keyframes marquee {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
-        }
-
-        /* 3. HERO BANNER - ẤN TƯỢNG VỚI HIỆU ỨNG GLO */
-        .hero-banner {
-            background: linear-gradient(135deg, #1a1e24, #0b0c10);
-            border: 2px solid var(--primary-color);
-            border-radius: 15px;
-            padding: 60px 0;
-            margin-top: 30px;
-            margin-bottom: 40px;
+        .header-section {
             text-align: center;
-            box-shadow: 0 0 30px rgba(229, 9, 20, 0.4);
-            position: relative;
-            overflow: hidden;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+            border-bottom: 2px solid #334155;
+            margin-bottom: 30px;
         }
 
-        .hero-banner::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(229, 9, 20, 0.1) 0%, rgba(11, 12, 16, 0) 70%);
-            animation: pulse-glo 4s ease-in-out infinite;
-        }
-
-        @keyframes pulse-glo {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 1; }
-        }
-
-        .hero-banner h1 {
-            font-size: 48px;
-            font-weight: 900;
-            color: var(--secondary-color);
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            text-shadow: 0 0 15px rgba(245, 197, 24, 0.6);
-        }
-
-        .hero-banner p {
-            font-size: 18px;
-            color: var(--text-muted);
-        }
-
-        /* 4. PAYMENT BOX - THIẾT KẾ NỔI BẬT VÀ TIỆN LỢI */
-        .payment-box {
-            background-color: var(--bg-card);
-            border: 2px solid var(--secondary-color);
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 40px;
-            box-shadow: 0 5px 20px rgba(245, 197, 24, 0.3);
-            text-align: center;
-        }
-
-        .payment-box h2 {
-            color: var(--secondary-color);
-            font-size: 24px;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        .payment-details {
-            background-color: var(--bg-color);
-            border: 1px dashed var(--accent-color);
-            border-radius: 10px;
-            padding: 20px;
-            display: inline-block;
-            text-align: left;
-            transition: 0.3s;
-        }
-
-        .payment-details:hover {
-            border-style: solid;
-            box-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
-        }
-
-        .payment-item {
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
-
-        .payment-item strong {
-            color: var(--accent-color);
-            margin-right: 5px;
-        }
-
-        .copy-btn {
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            cursor: pointer;
-            margin-left: 10px;
-            transition: 0.2s;
-        }
-
-        .copy-btn:hover {
-            color: var(--secondary-color);
-        }
-
-        /* 5. PRODUCT CARD - HIỆU ỨNG "VIP PRO" */
-        .section-title {
-            font-size: 28px;
+        .header-title {
+            color: var(--accent-gold);
             font-weight: 800;
             text-transform: uppercase;
-            color: var(--text-color);
-            margin-bottom: 25px;
-            position: relative;
-            display: inline-block;
+            letter-spacing: 1px;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background-color: var(--primary-color);
+        .search-box {
+            max-width: 500px;
+            margin: 20px auto 0 auto;
         }
 
-        .game-card {
-            background-color: var(--bg-card);
-            border: 1px solid #333;
+        .member-card {
+            background-color: var(--card-bg);
+            border: 1px solid #334155;
             border-radius: 12px;
-            overflow: hidden;
-            transition: 0.4s ease-in-out;
-            position: relative;
+            padding: 24px;
+            margin-bottom: 20px;
+            transition: transform 0.2s, border-color 0.2s;
         }
 
-        .game-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: var(--primary-color);
-            box-shadow: 0 10px 25px rgba(229, 9, 20, 0.5);
+        .member-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-gold);
         }
 
-        .game-card-img {
-            width: 100%;
-            height: 180px;
-            background-color: #1a1e24;
+        .avatar-box {
+            width: 70px;
+            height: 70px;
+            background-color: #334155;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--accent-color);
+            font-size: 28px;
+            color: var(--accent-gold);
+            border: 2px solid var(--accent-gold);
+        }
+
+        .badge-deposit {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--accent-green);
+            border: 1px solid var(--accent-green);
+            padding: 6px 12px;
+            border-radius: 20px;
             font-weight: bold;
-            font-size: 18px;
-            border-bottom: 1px solid #333;
+            font-size: 0.9rem;
+            display: inline-block;
         }
 
-        .game-card-body {
-            padding: 20px;
+        .info-label {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 2px;
         }
 
-        .game-card-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--text-color);
-            margin-bottom: 10px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        .info-value {
+            font-weight: 600;
+            font-size: 1rem;
+            word-break: break-all;
         }
 
-        .game-card-price {
-            color: var(--secondary-color);
-            font-size: 22px;
-            font-weight: 800;
-            margin-bottom: 15px;
+        .tag-service {
+            background-color: #334155;
+            color: #38bdf8;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-right: 5px;
+            margin-top: 5px;
         }
 
-        .btn-buy {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            background-color: var(--primary-color);
+        .btn-zalo {
+            background-color: #0068ff;
             color: white;
-            text-align: center;
-            text-decoration: none;
             font-weight: bold;
-            border-radius: 8px;
-            text-transform: uppercase;
-            transition: 0.3s;
-            border: 2px solid var(--primary-color);
+            border: none;
+            border-radius: 6px;
+            padding: 8px 16px;
+            text-decoration: none;
+            display: inline-block;
+            transition: opacity 0.2s;
         }
 
-        .btn-buy:hover {
-            background-color: transparent;
-            color: var(--primary-color);
-        }
-
-        /* VIP Badge cho Card */
-        .vip-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: var(--secondary-color);
-            color: var(--bg-color);
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-weight: 800;
-            font-size: 12px;
-            text-transform: uppercase;
-        }
-
-        /* 6. FOOTER - HOÀN THIỆN CHUYÊN NGHIỆP */
-        footer {
-            background-color: #1a1e24;
-            color: var(--text-muted);
-            padding: 40px 0;
-            border-top: 2px solid var(--primary-color);
-            margin-top: 50px;
-        }
-
-        .footer-logo {
-            font-size: 24px;
-            font-weight: 900;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
-
-        .footer-logo span {
-            color: var(--secondary-color);
-        }
-
-        .social-links a {
-            color: var(--text-muted);
-            font-size: 20px;
-            margin: 0 10px;
-            transition: 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--accent-color);
+        .btn-zalo:hover {
+            color: white;
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. HEADER & NAVBAR -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark container">
-            <a class="navbar-brand" href="#">SHOP <span>GIA BẢO</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-home me-1"></i> Trang Chủ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-gamepad me-1"></i> Liên Quân</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-crosshairs me-1"></i> Free Fire</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-cube me-1"></i> Roblox</a></li>
-                </ul>
-                <div class="d-flex gap-2">
-                    <a href="#" class="btn-action btn-register">Đăng Ký</a>
-                    <a href="#" class="btn-action btn-login">Đăng Nhập</a>
+    <!-- HEADER SECTION -->
+    <div class="header-section">
+        <div class="container">
+            <h2 class="header-title"><i class="fas fa-shield-alt me-2"></i>DANH SÁCH THÀNH VIÊN & DỊCH VỤ XÁC NHẬN</h2>
+            <p class="text-muted mb-0">Hệ thống tra cứu thông tin hạn mức bảo đảm và dịch vụ hoạt động</p>
+            
+            <div class="search-box">
+                <div class="input-group">
+                    <span class="input-group-text bg-dark border-secondary text-muted"><i class="fas fa-search"></i></span>
+                    <input type="text" id="searchInput" class="form-control bg-dark text-light border-secondary" placeholder="Nhập tên, SĐT hoặc STK để tìm kiếm...">
                 </div>
             </div>
-        </nav>
-    </header>
-
-    <!-- 2. ANNOUNCEMENT MARQUEE -->
-    <div class="marquee-container">
-        <div class="marquee-text">
-            🔥 CHÀO MỪNG BẠN ĐẾN VỚI SHOP ACC GIA BẢO - HỆ THỐNG NẠP ACC VÀ DỊCH VỤ GAME TỰ ĐỘNG UY TÍN HÀNG ĐẦU VIỆT NAM! NẠP ZALOPAY NHẬN NGAY KHUYẾN MÃI 200%! 🔥
         </div>
     </div>
 
+    <!-- MAIN CONTENT -->
     <div class="container">
-        <!-- 3. HERO BANNER -->
-        <div class="hero-banner">
-            <h1>SHOP ACC GIA BẢO</h1>
-            <p>Uy Tín - Nhanh Chóng - Tự Động 24/7. Hỗ trợ kỹ thuật siêu tốc.</p>
-        </div>
+        <div class="row" id="memberList">
 
-        <!-- 4. PAYMENT BOX ZALOPAY -->
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="payment-box">
-                    <h2><i class="fas fa-credit-card me-2"></i>THÔNG TIN NẠP TIỀN ZALOPAY</h2>
-                    <div class="payment-details">
-                        <div class="payment-item">
-                            <strong>Ví điện tử:</strong> ZaloPay
+            <!-- THÀNH VIÊN 1: GIA BẢO -->
+            <div class="col-12 member-item">
+                <div class="member-card">
+                    <div class="row align-items-center">
+                        <div class="col-md-2 text-center text-md-start mb-3 mb-md-0">
+                            <div class="avatar-box mx-auto ms-md-0">
+                                <i class="fas fa-user-check"></i>
+                            </div>
                         </div>
-                        <div class="payment-item">
-                            <strong>Số tài khoản:</strong> 0964703874
-                            <button class="copy-btn" onclick="copyText('0964703874')"><i class="fas fa-copy"></i></button>
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <h4 class="mb-1 text-warning font-weight-bold">Gia Bảo</h4>
+                            <div class="mb-2">
+                                <span class="badge-deposit"><i class="fas fa-check-circle me-1"></i>Hạn mức bảo đảm: 2.500.000 VNĐ</span>
+                            </div>
+                            <div class="mt-2">
+                                <span class="info-label d-block">Lĩnh vực / Dịch vụ:</span>
+                                <span class="tag-service">Buôn bán Acc FF</span>
+                                <span class="tag-service">File - Aim - Reg</span>
+                            </div>
                         </div>
-                        <div class="payment-item">
-                            <strong>Chủ tài khoản:</strong> SON GIA BAO
-                            <button class="copy-btn" onclick="copyText('SON GIA BAO')"><i class="fas fa-copy"></i></button>
-                        </div>
-                        <div class="payment-item">
-                            <strong>Cú pháp:</strong> [Tên Tài Khoản] + NapTien
+                        <div class="col-md-4 border-start-md border-secondary ps-md-4">
+                            <div class="mb-2">
+                                <div class="info-label">Số tài khoản / Ví:</div>
+                                <div class="info-value text-info">0964703874</div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="info-label">Zalo liên hệ:</div>
+                                <div class="info-value">0964703874</div>
+                            </div>
+                            <a href="https://zalo.me/0964703874" target="_blank" class="btn-zalo w-100 text-center">
+                                <i class="fas fa-comment-dots me-1"></i>Liên hệ qua Zalo
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- 5. DANH MỤC SẢN PHẨM -->
-        
-        <!-- Vòng Quay / Thử Vận May -->
-        <div class="section-title">Vòng Quay & Thử Vận May</div>
-        <div class="row g-4 mb-5">
-            <div class="col-md-4">
-                <div class="game-card">
-                    <div class="vip-badge">HOT</div>
-                    <div class="game-card-img"><i class="fas fa-dharmachakra fa-3x"></i></div>
-                    <div class="game-card-body">
-                        <div class="game-card-title">Vòng Quay KC Free Fire</div>
-                        <div class="game-card-price">19.000đ / Lượt</div>
-                        <a href="#" class="btn-buy">Quay Ngay</a>
+            <!-- THÀNH VIÊN 2: PHAM TAI -->
+            <div class="col-12 member-item">
+                <div class="member-card">
+                    <div class="row align-items-center">
+                        <div class="col-md-2 text-center text-md-start mb-3 mb-md-0">
+                            <div class="avatar-box mx-auto ms-md-0">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <h4 class="mb-1 text-warning font-weight-bold">Pham Tai</h4>
+                            <div class="mb-2">
+                                <span class="badge-deposit"><i class="fas fa-check-circle me-1"></i>Hạn mức bảo đảm: 3.000.000 VNĐ</span>
+                            </div>
+                            <div class="mt-2">
+                                <span class="info-label d-block">Lĩnh vực / Dịch vụ:</span>
+                                <span class="tag-service">Tool File</span>
+                                <span class="tag-service">Bot Zalo</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4 border-start-md border-secondary ps-md-4">
+                            <div class="mb-2">
+                                <div class="info-label">Số điện thoại:</div>
+                                <div class="info-value text-info">0358482865</div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="info-label">Zalo liên hệ:</div>
+                                <div class="info-value">0358482865</div>
+                            </div>
+                            <a href="https://zalo.me/0358482865" target="_blank" class="btn-zalo w-100 text-center">
+                                <i class="fas fa-comment-dots me-1"></i>Liên hệ qua Zalo
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="game-card">
-                    <div class="vip-badge">VIP</div>
-                    <div class="game-card-img"><i class="fas fa-gift fa-3x"></i></div>
-                    <div class="game-card-body">
-                        <div class="game-card-title">Thử Vận May Acc VIP</div>
-                        <div class="game-card-price">50.000đ / Lượt</div>
-                        <a href="#" class="btn-buy">Thử Ngay</a>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Tài Khoản Game -->
-        <div class="section-title">Danh Mục Tài Khoản Game</div>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="game-card">
-                    <div class="game-card-img"><i class="fas fa-image fa-3x"></i></div>
-                    <div class="game-card-body">
-                        <div class="game-card-title">Acc Free Fire Đỉnh Cao #FF101</div>
-                        <div class="game-card-price">150.000đ</div>
-                        <a href="#" class="btn-buy">Xem Chi Tiết</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="game-card">
-                    <div class="game-card-img"><i class="fas fa-image fa-3x"></i></div>
-                    <div class="game-card-body">
-                        <div class="game-card-title">Acc Liên Quân Full Tướng #LQ102</div>
-                        <div class="game-card-price">300.000đ</div>
-                        <a href="#" class="btn-buy">Xem Chi Tiết</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="game-card">
-                    <div class="game-card-img"><i class="fas fa-image fa-3x"></i></div>
-                    <div class="game-card-body">
-                        <div class="game-card-title">Acc Roblox Blox Fruit #RB103</div>
-                        <div class="game-card-price">200.000đ</div>
-                        <a href="#" class="btn-buy">Xem Chi Tiết</a>
-                    </div>
-                </div>
-            </div>
         </div>
-
     </div>
 
-    <!-- 6. FOOTER -->
-    <footer>
-        <div class="container text-center">
-            <div class="footer-logo">SHOP <span>GIA BẢO</span></div>
-            <p>Chuyên cung cấp tài khoản game, dịch vụ nạp game uy tín, an toàn, tự động 24/7.</p>
-            <div class="social-links mb-3">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
-            </div>
-            <p class="mb-0">&copy; 2026 SHOP GIA BẢO VIP PRO. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Nhúng Bootstrap 5 JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- SCRIPT TÌM KIẾM TỰ ĐỘNG -->
     <script>
-        // Hàm JavaScript để copy text
-        function copyText(text) {
-            navigator.clipboard.writeText(text).then(function() {
-                alert('Đã copy: ' + text);
-            }, function(err) {
-                console.error('Không thể copy: ', err);
+        document.getElementById('searchInput').addEventListener('keyup', function() {
+            let filter = this.value.toLowerCase();
+            let items = document.querySelectorAll('.member-item');
+
+            items.forEach(function(item) {
+                let text = item.innerText.toLowerCase();
+                if (text.includes(filter)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
             });
-        }
+        });
     </script>
 </body>
     </html>
