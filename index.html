@@ -1,623 +1,571 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shop Gia Bảo | Acc FF - LQ | Aim - Mod Uy Tín</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap" rel="stylesheet">
-<style>
-:root {
-  --cyan: #00f2ff;
-  --pink: #ff2d6f;
-  --purple: #b14eff;
-  --bg: #07070f;
-  --card: #0f0f1c;
-  --success: #00ff9d;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: 'Be Vietnam Pro', sans-serif;
-  background: var(--bg);
-  color: #eee;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-.header {
-  background: linear-gradient(90deg, #0a0a16, #160a22);
-  padding: 12px 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid var(--cyan);
-  position: sticky;
-  top: 0;
-  z-index: 200;
-  box-shadow: 0 0 30px rgba(0,242,255,0.25);
-}
-.logo {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 24px;
-  font-weight: 800;
-  background: linear-gradient(90deg, var(--cyan), var(--pink));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 1px;
-}
-.nav-btn {
-  background: transparent;
-  border: 1.5px solid var(--cyan);
-  color: var(--cyan);
-  padding: 7px 16px;
-  margin-left: 8px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 14px;
-  transition: 0.25s;
-}
-.nav-btn:hover {
-  background: var(--cyan);
-  color: #000;
-  box-shadow: 0 0 18px var(--cyan);
-}
-.marquee {
-  background: #12081c;
-  padding: 8px 0;
-  border-bottom: 1px solid #2a153a;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.marquee span {
-  display: inline-block;
-  padding-left: 100%;
-  animation: marquee 26s linear infinite;
-  font-size: 14px;
-  color: #ffb6d9;
-}
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-.banner {
-  height: 290px;
-  background: linear-gradient(rgba(7,7,15,0.78), rgba(7,7,15,0.92)), 
-              url('https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1400') center/cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-.banner h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 46px;
-  font-weight: 800;
-  text-shadow: 0 0 25px var(--cyan);
-  margin-bottom: 8px;
-}
-.banner p { font-size: 17px; opacity: 0.9; }
-.trust {
-  display: flex;
-  gap: 20px;
-  margin-top: 18px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.trust-item {
-  background: rgba(0,242,255,0.08);
-  border: 1px solid rgba(0,242,255,0.3);
-  padding: 6px 15px;
-  border-radius: 20px;
-  font-size: 13px;
-  color: var(--cyan);
-}
-.container { max-width: 1180px; margin: 35px auto; padding: 0 18px; }
-.section-title {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 23px;
-  margin: 40px 0 20px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.section-title::before {
-  content: '';
-  width: 5px;
-  height: 26px;
-  background: linear-gradient(var(--cyan), var(--pink));
-  border-radius: 3px;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-}
-.card {
-  background: var(--card);
-  border-radius: 18px;
-  overflow: hidden;
-  border: 1px solid #1c1c30;
-  transition: 0.3s;
-  position: relative;
-}
-.card:hover {
-  transform: translateY(-7px);
-  border-color: var(--cyan);
-  box-shadow: 0 12px 35px rgba(0,242,255,0.2);
-}
-.card-img {
-  height: 140px;
-  background: linear-gradient(135deg, #151528, #1a0f2e);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 52px;
-  position: relative;
-}
-.hot {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: var(--pink);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 20px;
-}
-.sold {
-  position: absolute;
-  bottom: 8px;
-  right: 10px;
-  background: rgba(0,0,0,0.6);
-  font-size: 11px;
-  padding: 2px 8px;
-  border-radius: 10px;
-  color: #aaa;
-}
-.card-body { padding: 16px; }
-.card-title { font-weight: 700; font-size: 16px; margin-bottom: 4px; }
-.card-desc { font-size: 12.5px; opacity: 0.7; margin-bottom: 10px; }
-.price {
-  color: var(--pink);
-  font-size: 22px;
-  font-weight: 800;
-  margin-bottom: 12px;
-}
-.btn {
-  width: 100%;
-  padding: 11px;
-  border: none;
-  border-radius: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  font-size: 14px;
-  transition: 0.25s;
-}
-.btn-buy {
-  background: linear-gradient(90deg, var(--cyan), #00c4d4);
-  color: #000;
-}
-.btn-buy:hover {
-  filter: brightness(1.12);
-  box-shadow: 0 0 20px var(--cyan);
-}
-.btn-outline {
-  background: transparent;
-  border: 1.5px solid var(--pink);
-  color: var(--pink);
-  margin-top: 8px;
-}
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.88);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-}
-.modal-content {
-  background: var(--card);
-  width: 92%;
-  max-width: 400px;
-  border-radius: 22px;
-  padding: 28px;
-  border: 1px solid var(--cyan);
-  box-shadow: 0 0 50px rgba(0,242,255,0.25);
-  position: relative;
-}
-.modal h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-family: 'Orbitron';
-  font-size: 22px;
-}
-.form-group { margin-bottom: 14px; }
-.form-group label { display: block; margin-bottom: 5px; font-size: 13px; color: #aaa; }
-.form-group input {
-  width: 100%;
-  padding: 12px 14px;
-  border-radius: 12px;
-  border: 1px solid #2a2a40;
-  background: #0a0a14;
-  color: #fff;
-  font-size: 15px;
-}
-.form-group input:focus { outline: none; border-color: var(--cyan); }
-.close-btn {
-  position: absolute;
-  top: 14px;
-  right: 18px;
-  font-size: 26px;
-  cursor: pointer;
-  color: #888;
-}
-.user-info { display: none; align-items: center; gap: 12px; }
-.balance {
-  background: #0a1f18;
-  padding: 5px 13px;
-  border-radius: 20px;
-  border: 1px solid var(--success);
-  color: var(--success);
-  font-weight: 700;
-  font-size: 14px;
-}
-.chat-bot { position: fixed; bottom: 22px; right: 22px; z-index: 999; }
-.chat-toggle {
-  width: 62px; height: 62px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--cyan), var(--pink));
-  display: flex; align-items: center; justify-content: center;
-  font-size: 28px; cursor: pointer;
-  box-shadow: 0 6px 25px rgba(0,242,255,0.45);
-  transition: 0.3s;
-}
-.chat-toggle:hover { transform: scale(1.08); }
-.chat-box {
-  display: none;
-  width: 340px; height: 440px;
-  background: var(--card);
-  border-radius: 20px;
-  border: 1px solid var(--cyan);
-  flex-direction: column;
-  overflow: hidden;
-  margin-bottom: 14px;
-  box-shadow: 0 15px 50px rgba(0,0,0,0.6);
-}
-.chat-header {
-  background: linear-gradient(90deg, #0d0d1c, #1a0a28);
-  padding: 14px 16px;
-  font-weight: 700;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 15px;
-}
-.chat-messages {
-  flex: 1; padding: 14px;
-  overflow-y: auto;
-  display: flex; flex-direction: column; gap: 11px;
-}
-.msg {
-  max-width: 82%;
-  padding: 10px 13px;
-  border-radius: 14px;
-  font-size: 13.5px;
-  line-height: 1.45;
-}
-.msg.bot { background: #16162a; align-self: flex-start; border-bottom-left-radius: 4px; }
-.msg.user { background: var(--cyan); color: #000; align-self: flex-end; border-bottom-right-radius: 4px; }
-.chat-input {
-  display: flex; padding: 11px;
-  border-top: 1px solid #1e1e30;
-}
-.chat-input input {
-  flex: 1; padding: 10px 14px;
-  border-radius: 22px; border: none;
-  background: #0a0a16; color: #fff; margin-right: 8px;
-}
-.chat-input button {
-  background: var(--cyan); border: none;
-  width: 40px; height: 40px; border-radius: 50%;
-  cursor: pointer; font-weight: bold; color: #000;
-}
-.notice {
-  background: linear-gradient(90deg, #1a0810, #12081c);
-  border: 1px solid var(--pink);
-  border-radius: 14px;
-  padding: 16px 20px;
-  margin-bottom: 30px;
-  font-size: 13.5px;
-  line-height: 1.65;
-}
-.notice strong { color: var(--pink); }
-.history-box {
-  background: var(--card);
-  border-radius: 16px;
-  padding: 18px;
-  margin-top: 30px;
-  border: 1px solid #1c1c30;
-  display: none;
-}
-.history-item {
-  padding: 10px 0;
-  border-bottom: 1px solid #1a1a2a;
-  font-size: 13.5px;
-  display: flex;
-  justify-content: space-between;
-}
-@media (max-width: 600px) {
-  .banner h1 { font-size: 30px; }
-  .logo { font-size: 18px; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Gia Bảo | Acc FF - LQ Random</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #0a0a12;
+      color: #eee;
+      line-height: 1.5;
+    }
+    .header {
+      background: #111122;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #00f2ff;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      font-size: 22px;
+      font-weight 40px auto;
+      padding: 0 20px;
+    }
+    .section-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 26px;
+      margin: 50px 0 25px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-title::before {
+      content: '';
+      width: 6px;
+      height: 28px;
+      background: linear-gradient(var(--cyan), var(--pink));
+      border-radius: 3px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 22px;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid #1c1c30;
+      transition: 0.3s;
+      position: relative;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--cyan);
+      box-shadow: 0 15px 40px rgba(0,242,255,0.25);
+    }
+    .card-img {
+      height: 160px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .hot {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--pink);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+    .card-body { padding: 18px; }
+    .card-title { font-weight: 700; font-size: 17px; margin-bottom: 6px; }
+    .card-desc { font-size: 13px; opacity: 0.7; margin-bottom: 12px; }
+    .price {
+      color: var(--pink);
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 15px;
+      transition: 0.25s;
+    }
+    .btn-buy {
+      background: linear-gradient(90deg, var(--cyan), #00c4d4);
+      color: #000;
+    }
+    .btn-buy:hover {
+      filter: brightness(1.1);
+      box-shadow: 0 0 20px var(--cyan);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--pink);
+      color: var(--pink);
+      margin-top: 8px;
+    }
+    .notice {
+      background: linear-gradient(90deg, #1a0810, #12081c);
+      border: 1px solid var(--pink);
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin-bottom: 30px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.9);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: var(--card);
+      width: 92%;
+      max-width: 400px;
+      border-radius: 20px;
+      padding: 30px;
+      border: 1px solid var(--cyan);
+      position: relative;
+    }
+    .modal h2 {
+      text-align: center;
+      margin-bottom: 22px;
+      font-family: 'Orbitron';
+    }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; margin-bottom: 6px; font-size: 13px; color: #aaa; }
+    .form-group input {
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 12px;
+      border: 1px solid #2a2a40;
+      background: #0a0a14;
+      color: #fff;
+      font-size: 15px;
+    }
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      color: #888;
+    }
+    .user-info { display: none; align-items: center; gap: 12px; }
+    .balance {
+      background: #0a1f18;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--success);
+      color: var(--success);
+      font-weight: 700;
+    }
+    .chat-bot { position: fixed; bottom: 25px; right: 25px; z-index: 1500; }
+    .chat-toggle {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--pink));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; cursor: pointer;
+      box-shadow: 0 5px 25px rgba(0,242,255,0.4);
+    }
+    .chat-box {
+      display: none;
+      width: 340px; height: 430px;
+      background: var(--card);
+      border-radius: 18px;
+      border: 1px solid var(--cyan);
+      flex-direction: column;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    .chat-header {
+      background: #0d0d1c;
+      padding: 14px 16px;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+    }
+    .chat-messages {
+      flex: 1; padding: 14px;
+      overflow-y: auto;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .msg {
+      max-width: 80%;
+      padding: 10px 13px;
+      border-radius: 14px;
+      font-size: 13.5px;
+    }
+    .msg.bot { background: #16162a; align-self: flex-start; }
+    .msg.user { background: var(--cyan); color: #000; align-self: flex-end; }
+    .chat-input {
+      display: flex; padding: 12px;
+      border-top: 1px solid #1e1e30;
+    }
+    .chat-input input {
+      flex: 1; padding: 10px 14px;
+      border-radius: 20px; border: none;
+      background: #0a0a16; color: #fff; margin-right: 8px;
+    }
+    .chat-input button {
+      background: var(--cyan); border: none;
+      width: 40px; height: 40px; border-radius: 50%;
+      cursor: pointer; font-weight: bold;
+    }
+    @media (max-width: 600px) {
+      .banner h1 { font-size: 32px; }
+      .logo { font-size: 18px; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="header">
-  <div class="logo">SHOP GIA BẢO</div>
-  <div>
-    <div class="user-info" id="userInfo">
-      <span id="userName" style="font-weight:600"></span>
-      <span class="balance" id="userBalance">0đ</span>
-      <button class="nav-btn" onclick="openModal('napModal')">Nạp tiền</button>
-      <button class="nav-btn" onclick="showHistory()">Lịch sử</button>
-      <button class="nav-btn" onclick="logout()">Thoát</button>
-    </div>
-    <div id="authButtons">
-      <button class="nav-btn" onclick="openModal('loginModal')">Đăng nhập</button>
-      <button class="nav-btn" onclick="openModal('regModal')">Đăng ký</button>
-    </div>
-  </div>
-</div>
-
-<div class="marquee">
-  <span>
-    🔥 Shop Gia Bảo uy tín • Đã bán hàng nghìn acc FF - LQ • File Aim Body Head key riêng • Chỉ nhận chuyển khoản STK 0964703874 SON GIA BAO • Gửi bill Zalo 0964703874 cộng tiền nhanh • Hỗ trợ 24/7 • Acc random giá rẻ • Mod skin LQ đẹp • 
-  </span>
-</div>
-
-<div class="banner">
-  <h1>SHOP GIA BẢO</h1>
-  <p>Acc FF - LQ Random • File Aim Body Head • Mod Skin Liên Quân</p>
-  <div class="trust">
-    <div class="trust-item">✅ Uy tín số 1</div>
-    <div class="trust-item">⚡ Cộng tiền siêu nhanh</div>
-    <div class="trust-item">🔒 Key riêng không share</div>
-    <div class="trust-item">💬 Zalo 0964703874</div>
-  </div>
-</div>
-
-<div class="container">
-
-  <div class="notice">
-    <strong>⚠️ QUY ĐỊNH NẠP TIỀN:</strong><br>
-    • Chỉ nhận chuyển khoản → STK: <strong>0964703874</strong> - <strong>SON GIA BAO</strong><br>
-    • Nội dung: <strong>NAP [username] [số tiền]</strong><br>
-    • Sau khi chuyển gửi <strong>bill + username</strong> vào Zalo <strong>0964703874</strong> để được cộng tiền<br>
-    • File Aim cấp KEY riêng, không chia sẻ được<br>
-    • Mọi vấn đề liên hệ Zalo: <strong>0964703874</strong>
-  </div>
-
-  <div class="section-title">🔥 ACC FREE FIRE RANDOM</div>
-  <div class="grid" id="ffGrid"></div>
-
-  <div class="section-title">⚔️ ACC LIÊN QUÂN RANDOM</div>
-  <div class="grid" id="lqGrid"></div>
-
-  <div class="section-title">🎯 FILE AIM + MOD SKIN</div>
-  <div class="grid">
-    <div class="card">
-      <div class="card-img">
-        <span class="hot">HOT</span>
-        🎯
-        <span class="sold">Đã bán nhiều</span>
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo">SHOP GIA BẢO</div>
+    <div>
+      <div class="user-info" id="userInfo">
+        <span id="userName" style="font-weight:600"></span>
+        <span class="balance" id="userBalance">0đ</span>
+        <button class="nav-btn" onclick="openModal('napModal')">Nạp tiền</button>
+        <button class="nav-btn" onclick="logout()">Thoát</button>
       </div>
-      <div class="card-body">
-        <div class="card-title">File Aim Body Head FF</div>
-        <div class="card-desc">Key riêng • Không share được</div>
-        <div class="price">100k / 200k</div>
-        <button class="btn btn-buy" onclick="buyItem('aim-1m', 100000, 'File Aim 1 tháng')">Mua 1 tháng - 100.000đ</button>
-        <button class="btn btn-outline" onclick="buyItem('aim-vv', 200000, 'File Aim Vĩnh viễn')">Mua Vĩnh viễn - 200.000đ</button>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-img">
-        <span class="hot">HOT</span>
-        🗺️
-        <span class="sold">Đã bán nhiều</span>
-      </div>
-      <div class="card-body">
-        <div class="card-title">Map + Mod Skin Liên Quân</div>
-        <div class="card-desc">Full skin đẹp • Map hack view</div>
-        <div class="price">100k / 200k</div>
-        <button class="btn btn-buy" onclick="buyItem('mod-1m', 100000, 'Mod LQ 1 tháng')">Mua 1 tháng - 100.000đ</button>
-        <button class="btn btn-outline" onclick="buyItem('mod-vv', 200000, 'Mod LQ Vĩnh viễn')">Mua Vĩnh viễn - 200.000đ</button>
+      <div id="authButtons">
+        <button class="nav-btn" onclick="openModal('loginModal')">Đăng nhập</button>
+        <button class="nav-btn" onclick="openModal('regModal')">Đăng ký</button>
       </div>
     </div>
   </div>
 
-  <div class="history-box" id="historyBox">
-    <h3 style="margin-bottom:15px;font-family:'Orbitron'">📜 Lịch sử mua hàng</h3>
-    <div id="historyList"></div>
+  <!-- CHỮ CHẠY -->
+  <div class="marquee">
+    <span>🔥 Shop Gia Bảo uy tín • Acc FF & LQ Random 29k-59k-199k-299k • File Aim Body Head key riêng • Chỉ nhận chuyển khoản STK 0964703874 SON GIA BAO • Gửi bill Zalo 0964703874 cộng tiền nhanh • Hỗ trợ 24/7 •</span>
   </div>
-</div>
 
-<!-- Login -->
-<div class="modal" id="loginModal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal('loginModal')">×</span>
-    <h2>Đăng nhập</h2>
-    <div class="form-group"><label>Username</label><input type="text" id="loginUser" placeholder="Nhập username"></div>
-    <div class="form-group"><label>Mật khẩu</label><input type="password" id="loginPass" placeholder="Nhập mật khẩu"></div>
-    <button class="btn btn-buy" onclick="login()">Đăng nhập</button>
-    <p style="text-align:center;margin-top:14px;font-size:13px">Chưa có nick? <a href="#" style="color:var(--cyan)" onclick="closeModal('loginModal');openModal('regModal')">Đăng ký</a></p>
+  <!-- BANNER -->
+  <div class="banner">
+    <h1>SHOP GIA BẢO</h1>
+    <p>Acc Free Fire & Liên Quân Random • File Aim • Mod Skin</p>
   </div>
-</div>
 
-<!-- Register -->
-<div class="modal" id="regModal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal('regModal')">×</span>
-    <h2>Đăng ký</h2>
-    <div class="form-group"><label>Username</label><input type="text" id="regUser" placeholder="Tạo username"></div>
-    <div class="form-group"><label>Mật khẩu</label><input type="password" id="regPass" placeholder="Tạo mật khẩu"></div>
-    <div class="form-group"><label>Nhập lại MK</label><input type="password" id="regPass2" placeholder="Nhập lại"></div>
-    <button class="btn btn-buy" onclick="register()">Tạo tài khoản</button>
+  <div class="container">
+
+    <!-- THÔNG BÁO -->
+    <div class="notice">
+      <strong style="color:var(--pink)">⚠️ QUY ĐỊNH NẠP TIỀN:</strong><br>
+      • Chỉ nhận chuyển khoản → STK: <strong>0964703874</strong> - <strong>SON GIA BAO</strong><br>
+      • Nội dung chuyển khoản: <strong>NAP [username] [số tiền]</strong><br>
+      • Sau khi chuyển hãy gửi <strong>bill + username</strong> vào Zalo <strong>0964703874</strong> để được cộng tiền<br>
+      • File Aim Body Head sẽ được cấp <strong>KEY RIÊNG</strong> (không chia sẻ được)
+    </div>
+
+    <!-- ACC FREE FIRE -->
+    <div class="section-title">🔥 ACC FREE FIRE RANDOM</div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600')">
+          <span class="hot">29K</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Acc FF Random 29K</div>
+          <div class="card-desc">Acc ngẫu nhiên • Full thông tin</div>
+          <div class="price">29.000đ</div>
+          <button class="btn btn-buy" onclick="buyItem(29000,'Acc FF Random 29K')">Mua ngay</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600')">
+          <span class="hot">59K</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Acc FF Random 59K</div>
+          <div class="card-desc">Acc đẹp hơn • Nhiều đồ hơn</div>
+          <div class="price">59.000đ</div>
+          <button class="btn btn-buy" onclick="buyItem(59000,'Acc FF Random 59K')">Mua ngay</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=600')">
+          <span class="hot">199K</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Acc FF Random 199K</div>
+          <div class="card-desc">Acc VIP • Rank cao • Nhiều skin</div>
+          <div class="price">199.000đ</div>
+          <button class="btn btn-buy" onclick="buyItem(199000,'Acc FF Random 199K')">Mua ngay</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=600')">
+          <span class="hot">299K</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Acc FF Random 299K</div>
+          <div class="card-desc">Acc siêu VIP • Full đồ hiếm</div>
+          <div class="price">299.000đ</div>
+          <button class="btn btn-buy" onclick="buyItem(299000,'Acc FF Random 299K')">Mua ngay</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACC LIÊN QUÂN -->
+    <div class="section-title">⚔️ ACC LIÊN QUÂN RANDOM</div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1556438064-2d7646166914?w=600')">
+          <span class="hot">29K</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Acc LQ Random 29K</div>
+          <div class="card-desc">Acc ngẫu nhiên • Full thông tin</div>
+          <div class="price">29.000đ</div>
+          <button class="btn btn-buy" onclick="buyItem(29000,'Acc LQ Random 29K')">Mua ngay</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1542751110-97427bbecf20?w=600')">
+          <span class="hot">59K</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Acc LQ Random 59K</div>
+          <div class="card-desc">Acc đẹp • Nhiều tướng</div>
+          <div class="price">59.000đ</div>
+          <button class="btn btn-buy" onclick="buyItem(59000,'Acc LQ Random 59K')">Mua ngay</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600')">
+          <span class="hot">199K</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Acc LQ Random 199K</div>
+          <div class="card-desc">Acc VIP • Rank cao • Nhiều skin</div>
+          <div class="price">199.000đ</div>
+          <button class="btn btn-buy" onclick="buyItem(199000,'Acc LQ Random 199K')">Mua ngay</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=600')">
+          <span class="hot">299K</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Acc LQ Random 299K</div>
+          <div class="card-desc">Acc siêu VIP • Full tướng + skin</div>
+          <div class="price">299.000đ</div>
+          <button class="btn btn-buy" onclick="buyItem(299000,'Acc LQ Random 299K')">Mua ngay</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILE AIM + MOD -->
+    <div class="section-title">🎯 FILE AIM + MOD SKIN</div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600')">
+          <span class="hot">HOT</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">File Aim Body Head FF</div>
+          <div class="card-desc">Key riêng • Không chia sẻ được</div>
+          <div class="price">100k / 200k</div>
+          <button class="btn btn-buy" onclick="buyItem(100000,'File Aim 1 tháng')">Mua 1 tháng - 100.000đ</button>
+          <button class="btn btn-outline" onclick="buyItem(200000,'File Aim Vĩnh viễn')">Mua Vĩnh viễn - 200.000đ</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img" style="background-image:url('https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=600')">
+          <span class="hot">HOT</span>
+        </div>
+        <div class="card-body">
+          <div class="card-title">Map + Mod Skin Liên Quân</div>
+          <div class="card-desc">Full skin đẹp • Map hack view</div>
+          <div class="price">100k / 200k</div>
+          <button class="btn btn-buy" onclick="buyItem(100000,'Mod LQ 1 tháng')">Mua 1 tháng - 100.000đ</button>
+          <button class="btn btn-outline" onclick="buyItem(200000,'Mod LQ Vĩnh viễn')">Mua Vĩnh viễn - 200.000đ</button>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
-<!-- Nạp tiền -->
-<div class="modal" id="napModal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal('napModal')">×</span>
-    <h2>Nạp tiền</h2>
-    <div style="background:#0a0a16;padding:14px;border-radius:12px;margin-bottom:14px;font-size:13.5px;line-height:1.6;border:1px solid #1e1e30">
-      <p>STK: <strong style="color:var(--cyan)">0964703874</strong></p>
-      <p>Chủ TK: <strong>SON GIA BAO</strong></p>
-      <p style="color:var(--pink);margin-top:8px">Chỉ nhận chuyển khoản. Gửi bill + username vào Zalo 0964703874.</p>
-    </div>
-    <div class="form-group">
-      <label>Số tiền nạp (tối thiểu 10.000đ)</label>
-      <input type="number" id="soTien" placeholder="VD: 50000" min="10000">
-    </div>
-    <button class="btn btn-buy" onclick="taoMa()">Tạo nội dung chuyển khoản</button>
-    <div id="maBox" style="display:none;margin-top:14px;padding:12px;background:#001a1a;border-radius:12px;border:1px solid var(--cyan)">
-      <p style="font-size:13px">Nội dung CK:</p>
-      <p style="font-size:17px;font-weight:800;color:var(--cyan)" id="noiDung"></p>
+  <!-- LOGIN MODAL -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('loginModal')">×</span>
+      <h2>Đăng nhập</h2>
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" id="loginUser" placeholder="Nhập username">
+      </div>
+      <div class="form-group">
+        <label>Mật khẩu</label>
+        <input type="password" id="loginPass" placeholder="Nhập mật khẩu">
+      </div>
+      <button class="btn btn-buy" onclick="login()">Đăng nhập</button>
+      <p style="text-align:center;margin-top:15px;font-size:13px">
+        Chưa có tài khoản? <a href="#" style="color:var(--cyan)" onclick="closeModal('loginModal');openModal('regModal')">Đăng ký ngay</a>
+      </p>
     </div>
   </div>
-</div>
 
-<!-- Chat bot -->
-<div class="chat-bot">
-  <div class="chat-box" id="chatBox">
-    <div class="chat-header">
-      <span>🤖 Hỗ trợ Shop Gia Bảo</span>
-      <span style="cursor:pointer;font-size:18px" onclick="toggleChat()">✕</span>
-    </div>
-    <div class="chat-messages" id="chatMsg">
-      <div class="msg bot">Xin chào! Mình là bot hỗ trợ của <b>Shop Gia Bảo</b> 💕<br>Bạn cần gì nào?<br>• Nạp tiền<br>• Mua acc FF/LQ<br>• File aim / mod<br>• Liên hệ admin</div>
-    </div>
-    <div class="chat-input">
-      <input type="text" id="chatIn" placeholder="Nhập tin nhắn..." onkeypress="if(event.key==='Enter')sendMsg()">
-      <button onclick="sendMsg()">➤</button>
+  <!-- REGISTER MODAL -->
+  <div class="modal" id="regModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('regModal')">×</span>
+      <h2>Đăng ký</h2>
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" id="regUser" placeholder="Tạo username">
+      </div>
+      <div class="form-group">
+        <label>Mật khẩu</label>
+        <input type="password" id="regPass" placeholder="Tạo mật khẩu">
+      </div>
+      <div class="form-group">
+        <label>Nhập lại mật khẩu</label>
+        <input type="password" id="regPass2" placeholder="Nhập lại mật khẩu">
+      </div>
+      <button class="btn btn-buy" onclick="register()">Tạo tài khoản</button>
     </div>
   </div>
-  <div class="chat-toggle" onclick="toggleChat()">💬</div>
-</div>
 
-<script>
-const ffData = [
-  {name:"Acc VIP Đỏ Random", price:29000, sold:"Nhiều"},
-  {name:"Acc Full Skin Súng", price:59000, sold:"Nhiều"},
-  {name:"Acc Rank Huyền Thoại", price:199000, sold:"Nhiều"},
-  {name:"Acc Siêu VIP Random", price:299000, sold:"Nhiều"}
-];
-const lqData = [
-  {name:"Acc Full Tướng Random", price:29000, sold:"Nhiều"},
-  {name:"Acc Rank Cao Thủ", price:59000, sold:"Nhiều"},
-  {name:"Acc Nhiều Skin SS", price:199000, sold:"Nhiều"},
-  {name:"Acc VIP Full Đồ", price:299000, sold:"Nhiều"}
-];
+  <!-- NẠP TIỀN MODAL -->
+  <div class="modal" id="napModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('napModal')">×</span>
+      <h2>Nạp tiền</h2>
+      <div style="background:#0a0a16;padding:15px;border-radius:12px;margin-bottom:15px;font-size:14px;line-height:1.6">
+        <p>STK: <strong style="color:var(--cyan)">0964703874</strong></p>
+        <p>Chủ TK: <strong>SON GIA BAO</strong></p>
+        <p style="color:var(--pink);margin-top:8px">Chỉ nhận chuyển khoản. Gửi bill + username vào Zalo 0964703874</p>
+      </div>
+      <div class="form-group">
+        <label>Số tiền muốn nạp</label>
+        <input type="number" id="soTien" placeholder="VD: 50000" min="10000">
+      </div>
+      <button class="btn btn-buy" onclick="taoMa()">Tạo nội dung chuyển khoản</button>
+      <div id="maBox" style="display:none;margin-top:15px;padding:12px;background:#001a1a;border-radius:10px;border:1px solid var(--cyan)">
+        <p>Nội dung CK:</p>
+        <p style="font-size:18px;font-weight:800;color:var(--cyan)" id="noiDung"></p>
+      </div>
+    </div>
+  </div>
 
-function getUsers(){ return JSON.parse(localStorage.getItem('giabaoUsers')||'{}'); }
-function saveUsers(u){ localStorage.setItem('giabaoUsers', JSON.stringify(u)); }
-function curUser(){ return localStorage.getItem('giabaoUser'); }
-function setUser(u){ u ? localStorage.setItem('giabaoUser',u) : localStorage.removeItem('giabaoUser'); }
+  <!-- CHAT BOT -->
+  <div class="chat-bot">
+    <div class="chat-box" id="chatBox">
+      <div class="chat-header">
+        <span>🤖 Hỗ trợ Shop Gia Bảo</span>
+        <span style="cursor:pointer" onclick="toggleChat()">✕</span>
+      </div>
+      <div class="chat-messages" id="chatMsg">
+        <div class="msg bot">Xin chào! Mình là bot hỗ trợ của <b>Shop Gia Bảo</b>. Bạn cần gì nào?</div>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="chatIn" placeholder="Nhập tin nhắn..." onkeypress="if(event.key==='Enter')sendMsg()">
+        <button onclick="sendMsg()">➤</button>
+      </div>
+    </div>
+    <div class="chat-toggle" onclick="toggleChat()">💬</div>
+  </div>
 
-function register(){
-  const u=document.getElementById('regUser').value.trim();
-  const p=document.getElementById('regPass').value;
-  const p2=document.getElementById('regPass2').value;
-  if(!u||!p) return alert('Điền đầy đủ!');
-  if(p!==p2) return alert('Mật khẩu không khớp!');
-  const users=getUsers();
-  if(users[u]) return alert('Username đã tồn tại!');
-  users[u]={pass:p, balance:0, history:[]};
-  saveUsers(users);
-  alert('Đăng ký thành công! Hãy đăng nhập.');
-  closeModal('regModal'); openModal('loginModal');
-}
-function login(){
-  const u=document.getElementById('loginUser').value.trim();
-  const p=document.getElementById('loginPass').value;
-  const users=getUsers();
-  if(!users[u]||users[u].pass!==p) return alert('Sai tài khoản hoặc mật khẩu!');
-  setUser(u); updateUI(); closeModal('loginModal');
-}
-function logout(){ setUser(null); updateUI(); document.getElementById('historyBox').style.display='none'; }
-function updateUI(){
-  const u=curUser();
-  if(u){
-    document.getElementById('authButtons').style.display='none';
-    document.getElementById('userInfo').style.display='flex';
-    document.getElementById('userName').innerText=u;
-    document.getElementById('userBalance').innerText=format(getUsers()[u].balance);
-  } else {
-    document.getElementById('authButtons').style.display='block';
-    document.getElementById('userInfo').style.display='none';
-  }
-}
-function format(n){ return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g,'.')+'đ'; }
+  <script>
+    // ========== HỆ THỐNG TÀI KHOẢN ==========
+    function getUsers() {
+      return JSON.parse(localStorage.getItem('giabao_users') || '{}');
+    }
+    function saveUsers(users) {
+      localStorage.setItem('giabao_users', JSON.stringify(users));
+    }
+    function getCurrentUser() {
+      return localStorage.getItem('giabao_current');
+    }
+    function setCurrentUser(username) {
+      if (username) localStorage.setItem('giabao_current', username);
+      else localStorage.removeItem('giabao_current');
+    }
 
-function render(){
-  let ff='', lq='';
-  ffData.forEach((item,i)=>{
-    ff+=`<div class="card">
-      <div class="card-img">${i===3?'🔥':'🎮'}<span class="hot">RANDOM</span><span class="sold">Đã bán ${item.sold}</span></div>
-      <div class="card-body">
-        <div class="card-title">${item.name}</div>
-        <div class="card-desc">Full thông tin • Random thật</div>
-        <div class="price">${format(item.price)}</div>
-        <button class="btn btn-buy" onclick="buyItem('ff-\( {item.price}', \){item.price},'${item.name}')">Mua ngay</button>
-      </div></div>`;
-  });
-  lqData.forEach((item,i)=>{
-    lq+=`<div class="card">
-      <div class="card-img">${i===3?'⚔️':'🛡️'}<span class="hot">RANDOM</span><span class="sold">Đã bán ${item.sold}</span></div>
-      <div class="card-body">
-        <div class="card-title">${item.name}</div>
-        <div class="card-desc">Full tướng/skin • Random thật</div>
-        <div class="price">${format(item.price)}</div>
-        <button class="btn btn-buy" onclick="buyItem('lq-\( {item.price}', \){item.price},'${item.name}')">Mua ngay</button>
-      </div></div>`;
-  });
-  document.getElementById('ffGrid').innerHTML=ff;
-  document.getElementById('lqGrid').innerHTML=lq;
-}
+    function register() {
+      const u = document.getElementById('regUser').value.trim();
+      const p = document.getElementById('regPass').value;
+      const p2 = document.getElementById('regPass2').value;
 
-function buyItem(id, price, name){
-  const u=curUser();
-  if(!u) return alert('Vui lòng đăng nhập trước!');
-  const users=getUsers();
-  if(users[u].balance < price) return alert('Số dư không đủ! Hãy nạp tiền.');
-  if(!confirm(`Xác nhận mua "${name}" giá ${format(price)}?`)) return;
+      if (!u || !p) return alert('Vui lòng điền đầy đủ thông tin!');
+      if (p !== p2) return alert('Mật khẩu không khớp!');
+      
+      const users = getUsers();
+      if (users[u]) return alert('Username này đã tồn tại!');
 
-  users[u].balance -= price;
-  let code = (id.includes('aim') || id.includes('mod')) 
-    ? 'KEY-' + Math.random().toString(36).substr(2,12).toUpperCase()
-    : id.toUpperCase() + '-' + Math.random().toString(36).substr(2,7).toUpperCase();
-  
-  users[u].history.unshift({name, price, code, time: new Date().toLocaleString('vi-VN')});
-  saveUsers(users);
-  updateUI();
-  alert(`✅ Mua thành công!\n\nMã / KEY: \( {code}\n\n \){(id.includes('aim')||id.includes('mod')) ? '⚠️ KEY chỉ dùng 1 máy, không share được.\n' : ''}Liên hệ Zalo 0964703874 để nhận thông tin.`);
-}
+      users[u] = { pass: p, balance: 0 };
+      saveUsers(users);
+      alert('Đăng ký thành công! Hãy đăng nhập.');
+      closeModal('regModal');
+      openModal('loginModal');
+    }
 
-function taoMa(){
-  const u=curUser();
-  if(!u) return alert('Đăng nhập trước!');
-  const tien=parseInt(document.getElementById('soTien').value);
-  if(!tien||tien<10000) return alert('Tối thiểu 10.000đ');
-  document.getElementById('noiDung').innerText = `NAP ${u} ${tien}`;
-  document.getElementById('maBox').style.display='block';
-}
+    function login() {
+      const u = document.getElementById('loginUser').value.trim();
+      const p = document.getElementById('loginPass').value;
+      const users = getUsers();
 
-function showHistory(){
-  const u=curUser();
-  if(!u) return;
-  const box=document.getElementById('historyBox');
-  const list=document.getElementById('historyList');
-  const his=getUsers()[u].hi
+      if (!users[u] || users[u].pass !== p) {
+        return alert('Sai tài khoản hoặc mật khẩu!');
+      }
+      setCurrentUser(u);
+      updateUI();
+      closeModal('loginModal');
+    }
+
+    function logout() {
+      setCurrentUser(null);
+      updateUI();
+    }
+
+    function updateUI() {
+      const user = getCurrentUser();
+      if (user) {
+        document.getElementById('authButtons').style.display = 'none';
+        document.getElementById('userInfo').style.display = 'flex';
+        document.getElementById('userName').innerText = user;
+        document.getElementById('userBalance').innerText = formatMoney(getUsers()[user].balance);
+      } else {
+        document.getElementById('authButtons').style.display = 'block';
+        document.getElementById('userInfo').style.display = 'none';
+      }
+    }
+
+    // ========== MUA HÀNG ==========
+    function buyItem(price, name) {
+      const user = getCurrentUser();
+      if (!user) return alert('Vui lòng đăng nhập trước khi mua!');
+
+      const users = getUsers();
+      if (users[user].balance < price) {
+        return alert('Số dư không đủ! Hãy nạp tiền trước.');
+      }
+
+      if (!confirm(`Xác nhận mua "${name}" với giá ${formatMoney(price)}?`)) return;
+
+      users[user].balance -= price;
+      saveUsers(users);
+      updateUI();
+
+      const code = 'GB' + Math.random().toString(36).substr(2, 9).toUpperCase();
+      alert(`✅ Mua thành công!\n\nMã đơn hàng: ${code}\n\nVui lòng liên hệ Zalo 0964703874 và gửi mã này để nhận acc / file.`);
+    }
+
+    // ========== NẠP TIỀN ==========
+    function taoMa() {
+      const user = getCurrentUser();
+     
