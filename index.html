@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FF Hack Shop | Aimlock & Aimbody</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #0a0a0f;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-bottom: 1px solid #2a2a4a;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #ff4d4d, #ff9f43);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            -webkit-text-fill-color: #ff4d4d;
+        }
+
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff6b6b;
+        }
+
+        /* Hero */
+        .hero {
+            background: radial-gradient(ellipse at top, #1a1a3a 0%, #0a0a0f 70%);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #fff, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            color: #aaa;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 77, 77, 0.15);
+            color: #ff6b6b;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 77, 77, 0.3);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Products */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 2.5rem;
+            font-weight: 700;
+        }
+
+        .section-title span {
+            color: #ff6b6b;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .card {
+            background: #13131f;
+            border: 1px solid #2a2a40;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(255, 77, 77, 0.15);
+            border-color: #ff4d4d44;
+        }
+
+        .card-img {
+            height: 160px;
+            background: linear-gradient(135deg, #1e1e30, #2a1a2a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            position: relative;
+        }
+
+        .card-img.android { background: linear-gradient(135deg, #0d2818, #1a3a2a); }
+        .card-img.ios { background: linear-gradient(135deg, #1a1a30, #2a2a4a); }
+
+        .platform-tag {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(0,0,0,0.6);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 1.4rem;
+        }
+
+        .card-body h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .card-body p {
+            color: #999;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            min-height: 40px;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 1.2rem;
+        }
+
+        .features li {
+            font-size: 0.85rem;
+            color: #bbb;
+            margin-bottom: 0.3rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .features li i {
+            color: #4ade80;
+            font-size: 0.75rem;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #ff6b6b;
+        }
+
+        .price small {
+            font-size: 0.8rem;
+            color: #888;
+            text-decoration: line-through;
+            margin-left: 6px;
+        }
+
+        .btn {
+            background: linear-gradient(90deg, #ff4d4d, #ff6b6b);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.3s, transform 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: scale(1.03);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #ff4d4d;
+            color: #ff6b6b;
+        }
+
+        /* Info boxes */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .info-box {
+            background: #13131f;
+            border: 1px solid #2a2a40;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .info-box i {
+            font-size: 2rem;
+            color: #ff6b6b;
+            margin-bottom: 0.8rem;
+        }
+
+        .info-box h4 {
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .info-box p {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #0d0d14;
+            border-top: 1px solid #1f1f2e;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .contact {
+            margin: 1rem 0;
+        }
+
+        .contact a {
+            color: #ff6b6b;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            nav { display: none; }
+            .header-content { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <div class="logo">
+            <i class="fas fa-crosshairs"></i> FF HACK SHOP
+        </div>
+        <nav>
+            <a href="#products">Sản phẩm</a>
+            <a href="#info">Hướng dẫn</a>
+            <a href="#contact">Liên hệ</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="badge"><i class="fas fa-bolt"></i> Update mới nhất • An toàn • Không ban</div>
+    <h1>Shop File FF Aimlock & Aimbody</h1>
+    <p>File aimlock, aimbody chất lượng cao cho Free Fire Android & iOS. Hỗ trợ 24/7, giao file nhanh chóng.</p>
+</section>
+
+<section class="container" id="products">
+    <h2 class="section-title">Sản phẩm <span>nổi bật</span></h2>
+
+    <div class="products">
+
+        <!-- Aimlock Android -->
+        <div class="card">
+            <div class="card-img android">
+                <i class="fab fa-android" style="color:#3ddc84"></i>
+                <span class="platform-tag">ANDROID</span>
+            </div>
+            <div class="card-body">
+                <h3>Aimlock VIP Android</h3>
+                <p>Aimlock siêu mượt, hỗ trợ headshot rate cao, tương thích mọi máy.</p>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> Aimlock Head + Body</li>
+                    <li><i class="fas fa-check"></i> Không lag, FPS ổn định</li>
+                    <li><i class="fas fa-check"></i> Update theo version FF</li>
+                    <li><i class="fas fa-check"></i> Hỗ trợ cài đặt từ xa</li>
+                </ul>
+                <div class="price-row">
+                    <div class="price">89k <small>150k</small></div>
+                    <button class="btn" onclick="buy('Aimlock VIP Android')">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aimbody Android -->
+        <div class="card">
+            <div class="card-img android">
+                <i class="fas fa-bullseye" style="color:#ff9f43"></i>
+                <span class="platform-tag">ANDROID</span>
+            </div>
+            <div class="card-body">
+                <h3>Aimbody Pro Android</h3>
+                <p>Aimbody chính xác, lock body mượt, phù hợp chơi rank cao.</p>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> Lock body siêu chắc</li>
+                    <li><i class="fas fa-check"></i> Tùy chỉnh độ nhạy</li>
+                    <li><i class="fas fa-check"></i> Không bị phát hiện</li>
+                    <li><i class="fas fa-check"></i> File sạch, không virus</li>
+                </ul>
+                <div class="price-row">
+                    <div class="price">69k <small>120k</small></div>
+                    <button class="btn" onclick="buy('Aimbody Pro Android')">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aimlock iOS -->
+        <div class="card">
+            <div class="card-img ios">
+                <i class="fab fa-apple" style="color:#fff"></i>
+                <span class="platform-tag">iOS</span>
+            </div>
+            <div class="card-body">
+                <h3>Aimlock VIP iOS</h3>
+                <p>Aimlock dành riêng cho iPhone/iPad. Hỗ trợ Non-Jailbreak & Jailbreak.</p>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> Hỗ trợ Non-JB & JB</li>
+                    <li><i class="fas fa-check"></i> Aimlock cực mạnh</li>
+                    <li><i class="fas fa-check"></i> Ổn định trên iOS 15-18</li>
+                    <li><i class="fas fa-check"></i> Hướng dẫn chi tiết</li>
+                </ul>
+                <div class="price-row">
+                    <div class="price">129k <small>200k</small></div>
+                    <button class="btn" onclick="buy('Aimlock VIP iOS')">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aimbody iOS -->
+        <div class="card">
+            <div class="card-img ios">
+                <i class="fas fa-crosshairs" style="color:#60a5fa"></i>
+                <span class="platform-tag">iOS</span>
+            </div>
+            <div class="card-body">
+                <h3>Aimbody Pro iOS</h3>
+                <p>Aimbody mượt mà cho iOS, lock chính xác, ít bị phát hiện.</p>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> Lock body ổn định</li>
+                    <li><i class="fas fa-check"></i> Tương thích nhiều device</li>
+                    <li><i class="fas fa-check"></i> Update thường xuyên</li>
+                    <li><i class="fas fa-check"></i> Hỗ trợ cài đặt</li>
+                </ul>
+                <div class="price-row">
+                    <div class="price">99k <small>160k</small></div>
+                    <button class="btn" onclick="buy('Aimbody Pro iOS')">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Combo Android -->
+        <div class="card">
+            <div class="card-img android">
+                <i class="fas fa-fire" style="color:#ff4d4d"></i>
+                <span class="platform-tag">COMBO</span>
+            </div>
+            <div class="card-body">
+                <h3>Combo Aimlock + Aimbody</h3>
+                <p>Full bộ Android: Aimlock + Aimbody. Tiết kiệm hơn khi mua riêng.</p>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> Đầy đủ 2 file</li>
+                    <li><i class="fas fa-check"></i> Hỗ trợ trọn đời update</li>
+                    <li><i class="fas fa-check"></i> Ưu tiên hỗ trợ</li>
+                    <li><i class="fas fa-check"></i> Giá tốt nhất</li>
+                </ul>
+                <div class="price-row">
+                    <div class="price">139k <small>220k</small></div>
+                    <button class="btn" onclick="buy('Combo Android')">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Combo iOS -->
+        <div class="card">
+            <div class="card-img ios">
+                <i class="fas fa-gem" style="color:#a78bfa"></i>
+                <span class="platform-tag">COMBO</span>
+            </div>
+            <div class="card-body">
+                <h3>Combo Full iOS</h3>
+                <p>Aimlock + Aimbody iOS. Full tính năng, hỗ trợ Non-JB.</p>
+                <ul class="features">
+                    <li><i class="fas fa-check"></i> Full bộ iOS</li>
+                    <li><i class="fas fa-check"></i> Non-Jailbreak hỗ trợ</li>
+                    <li><i class="fas fa-check"></i> Update miễn phí</li>
+                    <li><i class="fas fa-check"></i> Hỗ trợ 24/7</li>
+                </ul>
+                <div class="price-row">
+                    <div class="price">199k <small>320k</small></div>
+                    <button class="btn" onclick="buy('Combo iOS')">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="container" id="info">
+    <h2 class="section-title">Tại sao chọn <span>chúng tôi</span>?</h2>
+    <div class="info-grid">
+        <div class="info-box">
+            <i class="fas fa-shield-alt"></i>
+            <h4>An toàn</h4>
+            <p>File được kiểm tra kỹ, giảm thiểu nguy cơ ban tối đa.</p>
+        </div>
+        <div class="info-box">
+            <i class="fas fa-sync-alt"></i>
+            <h4>Update liên tục</h4>
+            <p>Luôn cập nhật theo phiên bản Free Fire mới nhất.</p>
+        </div>
+        <div class="info-box">
+            <i class="fas fa-headset"></i>
+            <h4>Hỗ trợ 24/7</h4>
+            <p>Nhân viên hỗ trợ cài đặt và xử lý lỗi mọi lúc.</p>
+        </div>
+        <div class="info-box">
+            <i class="fas fa-bolt"></i>
+            <h4>Giao nhanh</h4>
+            <p>Nhận file ngay sau khi thanh toán thành công.</p>
+        </div>
+    </div>
+</section>
+
+<footer id="contact">
+    <div class="logo" style="justify-content:center; margin-bottom:1rem;">
+        <i class="fas fa-crosshairs"></i> FF HACK SHOP
+    </div>
+    <div class="contact">
+        <a href="#"><i class="fab fa-telegram"></i> Telegram</a>
+        <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fas fa-phone"></i> Zalo</a>
+    </div>
+    <p>© 2026 FF Hack Shop. Chỉ bán file, không chịu trách nhiệm nếu bị ban.</p>
+    <p style="margin-top:0.5rem; font-size:0.8rem; color:#444;">Sử dụng tool có thể vi phạm điều khoản Free Fire. Cân nhắc trước khi mua.</p>
+</footer>
+
+<script>
+    function buy(product) {
+        alert('Bạn đã chọn: ' + product + '\n\nLiên hệ Telegram / Zalo để thanh toán và nhận file ngay!');
+        // Có thể thay bằng link Telegram thật, ví dụ:
+        // window.open('https://t.me/yourshop', '_blank');
+    }
+</script>
+
+</body>
+                  </html>
