@@ -3,357 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gia Bảo | Shop File FF Aimbody - Lock Head</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>GIA BẢO STORE - SHOP GAME UY TÍN</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
         body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: #0b0b12;
-            color: #e5e5e5;
-            line-height: 1.6;
+            background-color: #0f172a;
+            color: #f8fafc;
+            padding-bottom: 50px;
         }
+
+        /* Header */
         header {
-            background: linear-gradient(90deg, #111827, #1f2937);
-            border-bottom: 1px solid #374151;
-            padding: 1rem 1.2rem;
-            position: sticky;
-            top: 0;
-            z-index: 50;
-        }
-        .header-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 1.45rem;
-            font-weight: 800;
-            color: #fbbf24;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .logo span { color: #fff; }
-        .zalo-btn {
-            background: #0068ff;
-            color: white;
-            padding: 0.45rem 0.9rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .hero {
-            background: radial-gradient(ellipse at top, #1e1b4b 0%, #0b0b12 65%);
-            padding: 3.2rem 1.2rem 2.5rem;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            padding: 20px;
             text-align: center;
+            border-bottom: 2px solid #3b82f6;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
-        .hero h1 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 0.6rem;
-            background: linear-gradient(90deg, #fbbf24, #f59e0b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+
+        header h1 {
+            color: #38bdf8;
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        .hero p {
-            color: #9ca3af;
-            max-width: 520px;
-            margin: 0 auto 1.4rem;
-            font-size: 1rem;
+
+        header p {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-top: 5px;
         }
-        .badge {
-            display: inline-block;
-            background: rgba(251, 191, 36, 0.12);
-            color: #fbbf24;
-            border: 1px solid rgba(251, 191, 36, 0.3);
-            padding: 0.35rem 0.9rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            margin-bottom: 1.1rem;
-        }
+
+        /* Container */
         .container {
             max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem 1.2rem;
+            margin: 30px auto;
+            padding: 0 15px;
         }
+
         .section-title {
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.8rem;
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #38bdf8;
+            border-left: 4px solid #3b82f6;
+            padding-left: 10px;
         }
-        .section-title span { color: #fbbf24; }
-        .products {
+
+        /* Product Grid */
+        .grid-products {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 1.4rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
+
         .card {
-            background: #111827;
-            border: 1px solid #1f2937;
-            border-radius: 16px;
+            background-color: #1e293b;
+            border-radius: 12px;
             overflow: hidden;
-            transition: 0.25s;
+            border: 1px solid #334155;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
+
         .card:hover {
-            border-color: #fbbf24;
-            transform: translateY(-4px);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.2);
         }
-        .card-top {
-            height: 110px;
-            display: flex;
-            align-items: center;
+
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #f1f5f9;
+        }
+
+        .card-desc {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .price {
+            font-size: 18px;
+            color: #4ade80;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .btn-buy {
+            width: 100%;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-buy:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Modal Popup Thanh Toán */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8);
             justify-content: center;
-            font-size: 2.8rem;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: #1e293b;
+            padding: 25px;
+            border-radius: 12px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            border: 1px solid #3b82f6;
             position: relative;
         }
-        .android { background: linear-gradient(135deg, #064e3b, #065f46); }
-        .ios { background: linear-gradient(135deg, #1e3a8a, #1e40af); }
-        .vip { background: linear-gradient(135deg, #7c2d12, #9a3412); }
-        .tag {
+
+        .close-btn {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(0,0,0,0.55);
-            padding: 3px 9px;
-            border-radius: 20px;
-            font-size: 0.72rem;
-            font-weight: 600;
+            top: 10px; right: 15px;
+            font-size: 20px;
+            color: #94a3b8;
+            cursor: pointer;
         }
-        .card-body { padding: 1.2rem; }
-        .card-body h3 {
-            font-size: 1.15rem;
-            margin-bottom: 0.4rem;
-            color: #fff;
+
+        .qr-img {
+            width: 220px;
+            height: 220px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 2px solid #fff;
+            background-color: #fff;
         }
-        .card-body p {
-            color: #9ca3af;
-            font-size: 0.88rem;
-            margin-bottom: 0.9rem;
+
+        .bank-info {
+            background: #0f172a;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            text-align: left;
+            margin-top: 10px;
         }
-        .price {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: #fbbf24;
-            margin-bottom: 0.9rem;
-        }
-        .price small {
-            font-size: 0.8rem;
-            color: #6b7280;
-            font-weight: 500;
-        }
-        .btn {
-            display: block;
-            width: 100%;
-            background: linear-gradient(90deg, #f59e0b, #fbbf24);
-            color: #111;
-            text-align: center;
-            padding: 0.7rem;
-            border-radius: 10px;
-            font-weight: 700;
-            text-decoration: none;
-            font-size: 0.95rem;
-        }
-        .btn:hover { opacity: 0.92; }
-        .info-box {
-            background: #111827;
-            border: 1px solid #1f2937;
-            border-radius: 14px;
-            padding: 1.4rem;
-            margin-top: 2.5rem;
-        }
-        .info-box h3 {
-            color: #fbbf24;
-            margin-bottom: 0.8rem;
-            font-size: 1.15rem;
-        }
-        .info-box ul {
-            list-style: none;
-            color: #d1d5db;
-            font-size: 0.95rem;
-        }
-        .info-box li {
-            margin-bottom: 0.45rem;
-            display: flex;
-            gap: 8px;
-            align-items: flex-start;
-        }
-        .info-box i { color: #22c55e; margin-top: 3px; }
-        .free-box {
-            background: linear-gradient(135deg, #1e3a8a, #1e40af);
-            border-radius: 14px;
-            padding: 1.5rem;
-            text-align: center;
-            margin: 2.5rem 0 1.5rem;
-        }
-        .free-box h3 {
-            color: #fff;
-            margin-bottom: 0.6rem;
-        }
-        .free-box p {
-            color: #bfdbfe;
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-        }
-        .free-btn {
-            display: inline-block;
-            background: #fff;
-            color: #1e40af;
-            padding: 0.65rem 1.4rem;
-            border-radius: 10px;
-            font-weight: 700;
-            text-decoration: none;
-        }
-        footer {
-            text-align: center;
-            padding: 2.5rem 1.2rem;
-            border-top: 1px solid #1f2937;
-            margin-top: 1rem;
-            color: #6b7280;
-            font-size: 0.9rem;
-        }
-        footer a {
-            color: #fbbf24;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        @media (max-width: 500px) {
-            .hero h1 { font-size: 1.7rem; }
+
+        .bank-info p {
+            margin: 5px 0;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="header-inner">
-        <div class="logo">
-            <i class="fas fa-crown"></i>
-            <span>Gia Bảo</span>
-        </div>
-        <a href="https://zalo.me/0964703874" class="zalo-btn" target="_blank">
-            <i class="fas fa-comment"></i> Zalo
-        </a>
-    </div>
-</header>
+    <!-- Header -->
+    <header>
+        <h1>GIA BẢO STORE</h1>
+        <p>Hệ Thống Phân Phối File & Dịch Vụ Game Uy Tín</p>
+    </header>
 
-<section class="hero">
-    <div class="badge"><i class="fas fa-shield-alt"></i> Có Key • Không bị sài ké • Uy tín</div>
-    <h1>Shop File FF Gia Bảo</h1>
-    <p>Chuyên Aimbody - Lock Head Android & iOS.<br>File có key riêng, không thể chia sẻ hay sài ké.</p>
-</section>
-
-<div class="container">
-
-    <h2 class="section-title">Bảng giá <span>File</span></h2>
-
-    <div class="products">
-
-        <!-- ADR 1 tháng -->
-        <div class="card">
-            <div class="card-top android">
-                <i class="fab fa-android" style="color:#34d399"></i>
-                <span class="tag">ANDROID</span>
+    <!-- Main Container -->
+    <div class="container">
+        <h2 class="section-title">SẢN PHẨM NỔI BẬT</h2>
+        
+        <div class="grid-products">
+            <!-- Sản phẩm 1 -->
+            <div class="card">
+                <img src="https://via.placeholder.com/300x160/1e293b/38bdf8?text=FILE+CONFIG+FF" alt="File Config">
+                <div class="card-body">
+                    <div class="card-title">File Config Kéo Tâm VIP</div>
+                    <div class="card-desc">Hỗ trợ ghìm tâm, tăng nhạy full dòng máy Android & iOS. An toàn 100%.</div>
+                    <div class="price">50.000 VNĐ</div>
+                    <button class="btn-buy" onclick="openPayment('File Config Kéo Tâm VIP', '50000')">MUA NGAY</button>
+                </div>
             </div>
-            <div class="card-body">
-                <h3>File ADR 1 Tháng</h3>
-                <p>Aimbody + Lock Head đầy đủ chức năng</p>
-                <div class="price">100.000đ <small>/ 1 tháng</small></div>
-                <a href="https://zalo.me/0964703874" class="btn" target="_blank">Mua ngay</a>
-            </div>
-        </div>
 
-        <!-- iOS 1 tháng -->
-        <div class="card">
-            <div class="card-top ios">
-                <i class="fab fa-apple" style="color:#fff"></i>
-                <span class="tag">iOS</span>
+            <!-- Sản phẩm 2 -->
+            <div class="card">
+                <img src="https://via.placeholder.com/300x160/1e293b/38bdf8?text=MOD+SKIN+FF" alt="Mod Skin">
+                <div class="card-body">
+                    <div class="card-title">Gói Mod Full Skin Gun</div>
+                    <div class="card-desc">Mod full trang phục và hiệu ứng súng vip. Cài đặt cực dễ qua 1 click.</div>
+                    <div class="price">100.000 VNĐ</div>
+                    <button class="btn-buy" onclick="openPayment('Gói Mod Full Skin Gun', '100000')">MUA NGAY</button>
+                </div>
             </div>
-            <div class="card-body">
-                <h3>File iOS 1 Tháng</h3>
-                <p>Aimbody + Lock Head dành cho iPhone</p>
-                <div class="price">110.000đ <small>/ 1 tháng</small></div>
-                <a href="https://zalo.me/0964703874" class="btn" target="_blank">Mua ngay</a>
+
+            <!-- Sản phẩm 3 -->
+            <div class="card">
+                <img src="https://via.placeholder.com/300x160/1e293b/38bdf8?text=BANG+NHAY+VIP" alt="Bảng Nhạy">
+                <div class="card-body">
+                    <div class="card-title">Bảng Nhạy Đội Tuyển Pro</div>
+                    <div class="card-desc">Thông số độ nhạy độc quyền tối ưu cho từng dòng máy điện thoại.</div>
+                    <div class="price">20.000 VNĐ</div>
+                    <button class="btn-buy" onclick="openPayment('Bảng Nhạy Đội Tuyển Pro', '20000')">MUA NGAY</button>
+                </div>
             </div>
         </div>
-
-        <!-- Aimbody-lock-head 1 tháng -->
-        <div class="card">
-            <div class="card-top vip">
-                <i class="fas fa-crosshairs" style="color:#fdba74"></i>
-                <span class="tag">ADR + iOS</span>
-            </div>
-            <div class="card-body">
-                <h3>Aimbody - Lock Head</h3>
-                <p>Đồng giá Android & iOS • 1 tháng</p>
-                <div class="price">120.000đ <small>/ 1 tháng</small></div>
-                <a href="https://zalo.me/0964703874" class="btn" target="_blank">Mua ngay</a>
-            </div>
-        </div>
-
-        <!-- ADR + iOS Vĩnh viễn -->
-        <div class="card">
-            <div class="card-top android">
-                <i class="fas fa-infinity" style="color:#34d399"></i>
-                <span class="tag">VĨNH VIỄN</span>
-            </div>
-            <div class="card-body">
-                <h3>File ADR + iOS</h3>
-                <p>Sử dụng trọn đời • Có key bảo vệ</p>
-                <div class="price">200.000đ <small>/ vĩnh viễn</small></div>
-                <a href="https://zalo.me/0964703874" class="btn" target="_blank">Mua ngay</a>
-            </div>
-        </div>
-
-        <!-- Aimbody Vĩnh viễn -->
-        <div class="card">
-            <div class="card-top vip">
-                <i class="fas fa-gem" style="color:#fdba74"></i>
-                <span class="tag">VĨNH VIỄN</span>
-            </div>
-            <div class="card-body">
-                <h3>Aimbody - Lock Head</h3>
-                <p>Vĩnh viễn • Android & iOS</p>
-                <div class="price">200.000đ <small>/ vĩnh viễn</small></div>
-                <a href="https://zalo.me/0964703874" class="btn" target="_blank">Mua ngay</a>
-            </div>
-        </div>
-
     </div>
 
-    <!-- Box test free -->
-    <div class="free-box">
-        <h3><i class="fas fa-gift"></i> Test File Free</h3>
-        <p>Vào box Zalo để nhận file test miễn phí trước khi mua</p>
-        <a href="https://zalo.me/g/rag5jbxx3j3uaetrxb2i" class="free-btn" target="_blank">
-            Vào Box Test Free
-        </a>
+    <!-- Modal Thanh Toán QR -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closePayment()">&times;</span>
+            <h3 style="color: #38bdf8;">XÁC NHẬN THANH TOÁN</h3>
+            <p id="productName" style="margin-top: 5px; font-weight: bold;"></p>
+            
+            <!-- Mã QR Động ZaloPay -->
+            <img id="qrCode" class="qr-img" src="" alt="Mã QR Thanh Toán ZaloPay">
+
+            <div class="bank-info">
+                <p><strong>Phương thức:</strong> Ví ZaloPay</p>
+                <p><strong>Số điện thoại:</strong> 0964703874</p>
+                <p><strong>Chủ tài khoản:</strong> SON GIA BAO</p>
+                <p><strong>Số tiền:</strong> <span id="productPrice" style="color:#4ade80; font-weight:bold;"></span></p>
+                <p><strong>Nội dung CK:</strong> <span id="transferContent" style="color:#f59e0b; font-weight:bold;"></span></p>
+            </div>
+            <p style="font-size: 12px; color: #94a3b8; margin-top: 10px;">Quét mã bằng app Zalo / ZaloPay. Chuyển xong chụp bill gửi Zalo admin để nhận link tải!</p>
+        </div>
     </div>
 
-    <!-- Cam kết -->
-    <div class="info-box">
-        <h3><i class="fas fa-shield-alt"></i> Cam kết từ Gia Bảo</h3>
-        <ul>
-            <li><i class="fas fa-check-circle"></i> File có <b>key riêng</b> → không thể chia sẻ hay sài ké</li>
-            <li><i class="fas fa-check-circle"></i> Hỗ trợ cài đặt tận tình qua Zalo</li>
-            <li><i class="fas fa-check-circle"></i> Update file khi Free Fire ra phiên bản mới</li>
-            <li><i class="fas fa-check-circle"></i> Giao dịch nhanh, uy tín, nhiều khách tin dùng</li>
-        </ul>
-    </div>
+    <script>
+        function openPayment(name, price) {
+            document.getElementById('productName').innerText = name;
+            document.getElementById('productPrice').innerText = parseInt(price).toLocaleString('vi-VN') + ' VNĐ';
+            
+            // Tạo nội dung chuyển khoản tự động
+            const content = 'GIABAO ' + Math.floor(1000 + Math.random() * 9000);
+            document.getElementById('transferContent').innerText = content;
 
-</div>
+            // Cấu hình mã QR ZaloPay / VietQR tự động điền sẵn số tiền và nội dung
+            const accountNo = '84964703874'; // Định dạng SĐT quốc tế cho ZaloPay
+            const qrUrl = `https://img.vietqr.io/image/ZALOPAY-${accountNo}-compact2.png?amount=${price}&addInfo=${encodeURIComponent(content)}&accountName=SON%20GIA%20BAO`;
+            
+            document.getElementById('qrCode').src = qrUrl;
+            document.getElementById('paymentModal').style.display = 'flex';
+        }
 
-<footer>
-    <p>Liên hệ mua file: <a href="https://zalo.me/0964703874" target="_blank">Zalo 0964.703.874</a></p>
-    <p style="margin-top: 0.5rem;">Box test free: <a href="https://zalo.me/g/rag5jbxx3j3uaetrxb2i" target="_blank">Vào box tại đây</a></p>
-    <p style="margin-top: 1rem; font-size: 0.8rem;">© 2026 Gia Bảo Shop – File có key, không lo bị sài ké</p>
-</footer>
+        function closePayment() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
 
+        window.onclick = function(event) {
+            const modal = document.getElementById('paymentModal');
+            if (event.target == modal) {
+                closePayment();
+            }
+        }
+    </script>
 </body>
-                </html>               
+</html>
