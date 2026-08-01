@@ -1,428 +1,319 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop Gia Bảo - Acc Free Fire | Liên Quân | FC Mobile</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', system-ui, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP ACC GIA BẢO - Shop Game Uy Tín Giá Rẻ</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
 
-    body {
-      background: #0f0f13;
-      color: #e5e5e5;
-      line-height: 1.5;
-    }
+        body {
+            background-color: #0b0c10;
+            color: #ffffff;
+        }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+        /* HEADER & NAVIGATION */
+        header {
+            background-color: #1f2833;
+            border-bottom: 2px solid #e50914;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-    /* Header */
-    header {
-      background: #16161d;
-      border-bottom: 1px solid #2a2a35;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: #e50914;
+            text-shadow: 0 0 10px rgba(229, 9, 20, 0.7);
+            text-transform: uppercase;
+        }
 
-    .header-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
+        .logo span {
+            color: #f5c518;
+        }
 
-    .logo {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #00e5a0;
-      letter-spacing: 0.5px;
-    }
+        .nav-btns {
+            display: flex;
+            gap: 10px;
+        }
 
-    .logo span {
-      color: #fff;
-    }
+        .btn-auth {
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 14px;
+        }
 
-    nav {
-      display: flex;
-      gap: 22px;
-      font-size: 0.95rem;
-    }
+        .btn-login {
+            background-color: #e50914;
+            color: #fff;
+        }
 
-    nav a:hover {
-      color: #00e5a0;
-    }
+        .btn-register {
+            background-color: #45a29e;
+            color: #fff;
+        }
 
-    .btn-nap {
-      background: #00e5a0;
-      color: #000;
-      padding: 8px 18px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: 0.2s;
-    }
+        /* MARQUEE ANNOUNCEMENT */
+        .announcement {
+            background: #e50914;
+            color: #fff;
+            padding: 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
 
-    .btn-nap:hover {
-      background: #00c78a;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
 
-    /* Banner */
-    .banner {
-      background: linear-gradient(135deg, #1a1a24, #0f0f13);
-      padding: 40px 20px;
-      text-align: center;
-      border-bottom: 1px solid #2a2a35;
-    }
+        /* BANNER */
+        .banner {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #1f2833, #0b0c10);
+            border: 2px solid #333;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 25px;
+            box-shadow: 0 0 15px rgba(229, 9, 20, 0.3);
+        }
 
-    .banner h1 {
-      font-size: 1.8rem;
-      margin-bottom: 10px;
-    }
+        .banner h1 {
+            color: #f5c518;
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
 
-    .banner p {
-      color: #aaa;
-      max-width: 600px;
-      margin: 0 auto 20px;
-    }
+        /* PAYMENT BOX */
+        .payment-box {
+            background: #1f2833;
+            border: 2px solid #f5c518;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
 
-    /* Container */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 30px 20px;
-    }
+        .payment-box h2 {
+            color: #f5c518;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
 
-    .section-title {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+        .payment-info {
+            background: #0b0c10;
+            padding: 15px;
+            border-radius: 8px;
+            display: inline-block;
+            text-align: left;
+            line-height: 1.8;
+            border: 1px dashed #45a29e;
+        }
 
-    .section-title::before {
-      content: '';
-      width: 4px;
-      height: 20px;
-      background: #00e5a0;
-      border-radius: 2px;
-    }
+        .payment-info strong {
+            color: #66fcf1;
+        }
 
-    /* Grid sản phẩm */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
-      margin-bottom: 40px;
-    }
+        /* SECTION TITLE */
+        .section-title {
+            font-size: 22px;
+            color: #fff;
+            border-left: 5px solid #e50914;
+            padding-left: 10px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
 
-    .card {
-      background: #16161d;
-      border: 1px solid #2a2a35;
-      border-radius: 12px;
-      overflow: hidden;
-      transition: 0.25s;
-    }
+        /* PRODUCT GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
 
-    .card:hover {
-      border-color: #00e5a0;
-      transform: translateY(-3px);
-    }
+        .card {
+            background: #1f2833;
+            border-radius: 8px;
+            border: 1px solid #333;
+            overflow: hidden;
+            transition: 0.3s;
+            position: relative;
+        }
 
-    .card-img {
-      height: 140px;
-      background: #1e1e28;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-    }
+        .card:hover {
+            border-color: #e50914;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+        }
 
-    .card-body {
-      padding: 16px;
-    }
+        .card-img {
+            height: 150px;
+            background-color: #0b0c10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #66fcf1;
+            font-weight: bold;
+            border-bottom: 1px solid #333;
+        }
 
-    .card-title {
-      font-weight: 600;
-      margin-bottom: 6px;
-      font-size: 1.05rem;
-    }
+        .card-body {
+            padding: 15px;
+        }
 
-    .card-desc {
-      color: #999;
-      font-size: 0.85rem;
-      margin-bottom: 12px;
-    }
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff;
+        }
 
-    .card-price {
-      color: #00e5a0;
-      font-weight: 700;
-      font-size: 1.15rem;
-      margin-bottom: 12px;
-    }
+        .card-price {
+            color: #f5c518;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
 
-    .btn-buy {
-      display: block;
-      width: 100%;
-      background: #2a2a35;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: 0.2s;
-    }
+        .btn-buy {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #e50914;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
 
-    .btn-buy:hover {
-      background: #00e5a0;
-      color: #000;
-    }
+        .btn-buy:hover {
+            background: #b20710;
+        }
 
-    /* Nạp tiền */
-    .nap-box {
-      background: #16161d;
-      border: 1px solid #2a2a35;
-      border-radius: 12px;
-      padding: 28px;
-      max-width: 480px;
-      margin: 0 auto 40px;
-    }
-
-    .nap-box h3 {
-      margin-bottom: 16px;
-      color: #00e5a0;
-    }
-
-    .nap-info {
-      background: #1e1e28;
-      padding: 16px;
-      border-radius: 8px;
-      margin-bottom: 16px;
-      font-size: 0.95rem;
-    }
-
-    .nap-info p {
-      margin-bottom: 6px;
-    }
-
-    .nap-info strong {
-      color: #fff;
-    }
-
-    .note {
-      font-size: 0.85rem;
-      color: #aaa;
-      line-height: 1.6;
-    }
-
-    /* Footer */
-    footer {
-      background: #16161d;
-      border-top: 1px solid #2a2a35;
-      padding: 30px 20px;
-      text-align: center;
-      color: #777;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: #00e5a0;
-    }
-
-    /* Responsive */
-    @media (max-width: 700px) {
-      nav {
-        display: none;
-      }
-      .banner h1 {
-        font-size: 1.4rem;
-      }
-    }
-  </style>
+        /* FOOTER */
+        footer {
+            background-color: #1f2833;
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid #e50914;
+            color: #c5c6c7;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="header-inner">
-      <div class="logo">Shop <span>Gia Bảo</span></div>
-      <nav>
-        <a href="#tuimu">Túi Mù</a>
-        <a href="#acc">Acc Game</a>
-        <a href="#nap">Nạp Tiền</a>
-        <a href="#lienhe">Liên Hệ</a>
-      </nav>
-      <a href="#nap" class="btn-nap">Nạp Tiền</a>
-    </div>
-  </header>
-
-  <!-- Banner -->
-  <section class="banner">
-    <h1>Shop Gia Bảo – Acc Game Uy Tín</h1>
-    <p>Chuyên Acc Free Fire • Liên Quân • FC Mobile. Giao dịch nhanh, bảo hành rõ ràng.</p>
-    <a href="#nap" class="btn-nap">Nạp tiền ngay</a>
-  </section>
-
-  <div class="container">
-
-    <!-- Túi Mù -->
-    <h2 class="section-title" id="tuimu">Túi Mù</h2>
-    <div class="grid">
-
-      <div class="card">
-        <div class="card-img">🔥</div>
-        <div class="card-body">
-          <div class="card-title">Túi Mù Free Fire 29K</div>
-          <div class="card-desc">Cơ hội nhận acc chất lượng cao</div>
-          <div class="card-price">29.000đ</div>
-          <a href="#nap" class="btn-buy">Mua ngay</a>
+    <!-- NAV BAR -->
+    <header>
+        <div class="logo">SHOP <span>GIA BẢO</span></div>
+        <div class="nav-btns">
+            <a href="#" class="btn-auth btn-login">Đăng Nhập</a>
+            <a href="#" class="btn-auth btn-register">Đăng Ký</a>
         </div>
-      </div>
+    </header>
 
-      <div class="card">
-        <div class="card-img">🔥</div>
-        <div class="card-body">
-          <div class="card-title">Túi Mù Free Fire 59K</div>
-          <div class="card-desc">Tỉ lệ nổ cao hơn</div>
-          <div class="card-price">59.000đ</div>
-          <a href="#nap" class="btn-buy">Mua ngay</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img">🔥</div>
-        <div class="card-body">
-          <div class="card-title">Túi Mù Free Fire 99K</div>
-          <div class="card-desc">Acc ngon hơn</div>
-          <div class="card-price">99.000đ</div>
-          <a href="#nap" class="btn-buy">Mua ngay</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img">⚔️</div>
-        <div class="card-body">
-          <div class="card-title">Túi Mù Liên Quân 49K</div>
-          <div class="card-desc">Reg skin đa dạng</div>
-          <div class="card-price">49.000đ</div>
-          <a href="#nap" class="btn-buy">Mua ngay</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img">⚔️</div>
-        <div class="card-body">
-          <div class="card-title">Túi Mù Liên Quân 99K</div>
-          <div class="card-desc">Tỉ lệ cao</div>
-          <div class="card-price">99.000đ</div>
-          <a href="#nap" class="btn-buy">Mua ngay</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img">⚽</div>
-        <div class="card-body">
-          <div class="card-title">Túi Mù FC Mobile 49K</div>
-          <div class="card-desc">Acc chất</div>
-          <div class="card-price">49.000đ</div>
-          <a href="#nap" class="btn-buy">Mua ngay</a>
-        </div>
-      </div>
-
+    <!-- THÔNG BÁO CHẠY -->
+    <div class="announcement">
+        <marquee behavior="scroll" direction="left">
+            🔥 CHÀO MỪNG BẠN ĐẾN VỚI SHOP ACC GIA BẢO - HỆ THỐNG NẠP ACC VÀ DỊCH VỤ GAME TỰ ĐỘNG UY TÍN HÀNG ĐẦU! 🔥
+        </marquee>
     </div>
 
-    <!-- Acc Game -->
-    <h2 class="section-title" id="acc">Acc Game</h2>
-    <div class="grid">
-
-      <div class="card">
-        <div class="card-img">🔥</div>
-        <div class="card-body">
-          <div class="card-title">Acc Free Fire dưới 1M</div>
-          <div class="card-desc">Nhiều lựa chọn</div>
-          <div class="card-price">Liên hệ</div>
-          <a href="#nap" class="btn-buy">Xem acc</a>
+    <div class="container">
+        <!-- BANNER CHÍNH -->
+        <div class="banner">
+            <h1>SHOP ACC GIA BẢO</h1>
+            <p>Uy Tín - Nhanh Chóng - Tự Động 24/7</p>
         </div>
-      </div>
 
-      <div class="card">
-        <div class="card-img">🔥</div>
-        <div class="card-body">
-          <div class="card-title">Acc Free Fire 1M – 10M</div>
-          <div class="card-desc">Đồ đẹp, rank cao</div>
-          <div class="card-price">Liên hệ</div>
-          <a href="#nap" class="btn-buy">Xem acc</a>
+        <!-- KHUNG NẠP ZALOPAY -->
+        <div class="payment-box">
+            <h2>💳 THÔNG TIN NẠP TIỀN ZALOPAY</h2>
+            <div class="payment-info">
+                <p>Ví điện tử: <strong>ZaloPay</strong></p>
+                <p>Số tài khoản: <strong>0964703874</strong></p>
+                <p>Chủ tài khoản: <strong>SON GIA BAO</strong></p>
+                <p>Nội dung chuyển khoản: <strong>[Tên Tài Khoản] + NapTien</strong></p>
+            </div>
         </div>
-      </div>
 
-      <div class="card">
-        <div class="card-img">⚔️</div>
-        <div class="card-body">
-          <div class="card-title">Acc Liên Quân dưới 2M</div>
-          <div class="card-desc">Reg nhiều skin</div>
-          <div class="card-price">Liên hệ</div>
-          <a href="#nap" class="btn-buy">Xem acc</a>
+        <!-- DANH MỤC VÒNG QUAY / DỊCH VỤ -->
+        <div class="section-title">Vòng Quay & Thử Vận May</div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-img">🎰 Vòng Quay Kim Cương</div>
+                <div class="card-body">
+                    <div class="card-title">Vòng Quay KC Free Fire</div>
+                    <div class="card-price">19.000đ / Lượt</div>
+                    <a href="#" class="btn-buy">Quay Ngay</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">🎁 Thử Vận May VIP</div>
+                <div class="card-body">
+                    <div class="card-title">Thử Vận May Acc VIP</div>
+                    <div class="card-price">50.000đ / Lượt</div>
+                    <a href="#" class="btn-buy">Thử Ngay</a>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <div class="card">
-        <div class="card-img">⚔️</div>
-        <div class="card-body">
-          <div class="card-title">Acc Liên Quân trên 2M</div>
-          <div class="card-desc">VIP, full skin</div>
-          <div class="card-price">Liên hệ</div>
-          <a href="#nap" class="btn-buy">Xem acc</a>
+        <!-- DANH MỤC BÁN ACC -->
+        <div class="section-title">Danh Mục Tài Khoản Game</div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-img">🖼️ Ảnh Acc Game #01</div>
+                <div class="card-body">
+                    <div class="card-title">Acc Free Fire Đỉnh Cao #101</div>
+                    <div class="card-price">150.000đ</div>
+                    <a href="#" class="btn-buy">Xem Chi Tiết</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">🖼️ Ảnh Acc Game #02</div>
+                <div class="card-body">
+                    <div class="card-title">Acc Liên Quân Full Tướng #102</div>
+                    <div class="card-price">300.000đ</div>
+                    <a href="#" class="btn-buy">Xem Chi Tiết</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img">🖼️ Ảnh Acc Game #03</div>
+                <div class="card-body">
+                    <div class="card-title">Acc Roblox Blox Fruit #103</div>
+                    <div class="card-price">200.000đ</div>
+                    <a href="#" class="btn-buy">Xem Chi Tiết</a>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div class="card">
-        <div class="card-img">⚽</div>
-        <div class="card-body">
-          <div class="card-title">Nick FC Mobile chất</div>
-          <div class="card-desc">Team mạnh</div>
-          <div class="card-price">Liên hệ</div>
-          <a href="#nap" class="btn-buy">Xem acc</a>
-        </div>
-      </div>
-
     </div>
 
-    <!-- Nạp tiền -->
-    <h2 class="section-title" id="nap">Nạp Tiền</h2>
-    <div class="nap-box">
-      <h3>Thông tin chuyển khoản</h3>
-      <div class="nap-info">
-        <p><strong>ZaloPay:</strong> 84964703874</p>
-        <p><strong>Chủ tài khoản:</strong> SON GIA BAO</p>
-        <p><strong>Nội dung:</strong> [Tên tài khoản của bạn] nạp</p>
-      </div>
-      <p class="note">
-        • Sau khi chuyển khoản hãy nhắn tin Zalo để được cộng tiền nhanh.<br>
-        • Kiểm tra kỹ số tài khoản trước khi chuyển.<br>
-        • Shop chỉ hỗ trợ qua Zalo chính thức.
-      </p>
-    </div>
-
-  </div>
-
-  <!-- Footer -->
-  <footer id="lienhe">
-    <p>© 2026 Shop Gia Bảo. All rights reserved.</p>
-    <p style="margin-top: 8px;">
-      Liên hệ hỗ trợ: <a href="https://zalo.me/84964703874">Zalo 84964703874</a>
-    </p>
-  </footer>
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 SHOP ACC GIA BẢO. All Rights Reserved.</p>
+        <p>Hệ thống bán tài khoản game uy tín hàng đầu.</p>
+    </footer>
 
 </body>
-  </html>
+</html>
