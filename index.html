@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HỆ THỐNG QUẢN LÝ DỊCH VỤ & BẢO CHỨNG UY TÍN</title>
+    <title>HỆ THỐNG TRUNG GIAN & QUẢN LÝ BẢO CHỨNG</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome Icons -->
@@ -28,48 +28,42 @@
             padding-bottom: 60px;
         }
 
-        /* HEADER & NAVBAR */
         .navbar {
             background-color: var(--card-bg);
             border-bottom: 1px solid var(--card-border);
         }
 
-        /* HERO & STATS */
         .hero-section {
-            padding: 30px 0;
+            padding: 35px 0;
             background: linear-gradient(180deg, #151c2c 0%, #0b0f19 100%);
             border-bottom: 1px solid var(--card-border);
             margin-bottom: 30px;
         }
 
-        .stat-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        /* CARD MEMBER */
         .member-card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            border-radius: 12px;
+            border-radius: 14px;
             padding: 20px;
             margin-bottom: 20px;
-            transition: all 0.3s;
+            transition: all 0.25s ease;
         }
 
         .member-card:hover {
             border-color: var(--accent-gold);
-            transform: translateY(-3px);
+            transform: translateY(-2px);
+        }
+
+        .avatar-box {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            margin: 0 auto;
         }
 
         .avatar-img {
-            width: 70px;
-            height: 70px;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
             background: #232d42;
             display: flex;
@@ -78,19 +72,45 @@
             font-size: 28px;
             color: var(--accent-gold);
             border: 2px solid var(--accent-gold);
-            margin: 0 auto;
+        }
+
+        .verified-tick {
+            position: absolute;
+            bottom: -2px;
+            right: -2px;
+            background-color: var(--accent-blue);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            border: 2px solid var(--card-bg);
         }
 
         .deposit-badge {
-            background: rgba(16, 185, 129, 0.15);
+            background: rgba(16, 185, 129, 0.12);
             color: var(--accent-green);
             border: 1px solid var(--accent-green);
             padding: 4px 12px;
             border-radius: 20px;
-            font-weight: bold;
+            font-weight: 700;
             font-size: 0.85rem;
             display: inline-block;
         }
+
+        .role-badge {
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .role-admin { background: rgba(239, 68, 68, 0.2); color: #ef4444; border: 1px solid #ef4444; }
+        .role-gdv { background: rgba(59, 130, 246, 0.2); color: #3b82f6; border: 1px solid #3b82f6; }
 
         .tag-skill {
             background: #232d42;
@@ -107,7 +127,7 @@
             color: white;
             font-weight: bold;
             border-radius: 6px;
-            padding: 8px 12px;
+            padding: 8px;
             text-decoration: none;
             display: block;
             text-align: center;
@@ -118,210 +138,117 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
+    <!-- NAVBAR HEADER -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold text-warning" href="#"><i class="fas fa-shield-alt me-2"></i>TRUST-CHECK</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Trang chủ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#reportModal"><i class="fas fa-exclamation-triangle text-danger me-1"></i>Gửi phản ánh</a></li>
-                </ul>
-                <div class="d-flex gap-2">
-                    <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#loginModal">Đăng nhập</button>
-                    <button class="btn btn-warning btn-sm fw-bold" data-bs-toggle="modal" data-bs-target="#registerModal">Đăng ký</button>
-                </div>
+            <a class="navbar-brand fw-bold text-warning" href="#"><i class="fas fa-shield-alt me-2"></i>CHECK-GDTG</a>
+            <div class="d-flex gap-2">
+                <button class="btn btn-outline-light btn-sm" data-bs-toggle="modal" data-bs-target="#loginModal">Đăng nhập</button>
+                <button class="btn btn-warning btn-sm fw-bold" data-bs-toggle="modal" data-bs-target="#registerModal">Đăng ký</button>
             </div>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
     <div class="hero-section">
-        <div class="container">
-            <div class="text-center mb-4">
-                <h2 class="fw-bold text-warning">HỆ THỐNG TRA CỨU DỊCH VỤ TRUNG GIAN UY TÍN</h2>
-                <p class="text-secondary">Xác minh hạn mức bảo chứng và thông tin liên hệ chính thức</p>
-            </div>
+        <div class="container text-center">
+            <h2 class="fw-bold text-warning">DANH SÁCH BẢO CHỨNG GIAO DỊCH</h2>
+            <p class="text-secondary">Tra cứu danh tính và hạn mức bảo đảm chính thức</p>
 
-            <!-- STATS -->
-            <div class="row g-3 justify-content-center mb-4">
-                <div class="col-6 col-md-3">
-                    <div class="stat-card">
-                        <i class="fas fa-users fs-3 text-warning"></i>
-                        <div>
-                            <div class="text-secondary small">Thành viên</div>
-                            <div class="fw-bold fs-5">02 Quản trị</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-card">
-                        <i class="fas fa-vault fs-3 text-success"></i>
-                        <div>
-                            <div class="text-secondary small">Quỹ Quản Lý</div>
-                            <div class="fw-bold fs-5 text-success">5.500.000đ</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- SEARCH -->
-            <div class="row justify-content-center">
+            <div class="row justify-content-center mt-3">
                 <div class="col-md-6">
-                    <input type="text" id="searchInput" class="form-control bg-dark text-light border-secondary p-2" placeholder="Nhập tên, SĐT hoặc dịch vụ để lọc nhanh...">
+                    <input type="text" id="searchInput" class="form-control bg-dark text-light border-secondary p-2" placeholder="Nhập tên, SĐT hoặc dịch vụ để tìm...">
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- MAIN MEMBER LIST -->
+    <!-- CONTAINER HIỂN THỊ DANH SÁCH THÀNH VIÊN -->
     <div class="container">
         <div class="row" id="memberList">
-
-            <!-- MEMBER 1: GIA BẢO -->
-            <div class="col-12 member-item">
-                <div class="member-card">
-                    <div class="row align-items-center">
-                        <div class="col-md-2 text-center mb-3 mb-md-0">
-                            <div class="avatar-img"><i class="fas fa-user-shield"></i></div>
-                            <span class="badge bg-danger mt-2">ADMIN</span>
-                        </div>
-                        <div class="col-md-6 mb-3 mb-md-0">
-                            <h4 class="text-warning fw-bold mb-1">Gia Bảo</h4>
-                            <div class="mb-2">
-                                <span class="deposit-badge"><i class="fas fa-check-circle me-1"></i>Hạn mức bảo đảm: 2.500.000 VNĐ</span>
-                            </div>
-                            <div>
-                                <span class="tag-skill">Acc FF</span>
-                                <span class="tag-skill">File - Aim - Reg</span>
-                                <span class="tag-skill">Trung Gian GDTG</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4 border-start-md border-secondary ps-md-4">
-                            <div class="small text-secondary">Zalo & Ví ZaloPay:</div>
-                            <div class="fw-bold text-info mb-2">0964703874 (SON GIA BAO)</div>
-                            <a href="https://zalo.me/0964703874" target="_blank" class="btn-zalo"><i class="fas fa-comment me-1"></i>Liên hệ Zalo Gia Bảo</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- MEMBER 2: PHAM TAI -->
-            <div class="col-12 member-item">
-                <div class="member-card">
-                    <div class="row align-items-center">
-                        <div class="col-md-2 text-center mb-3 mb-md-0">
-                            <div class="avatar-img" style="color: #8b5cf6; border-color: #8b5cf6;"><i class="fas fa-robot"></i></div>
-                            <span class="badge bg-purple bg-opacity-75 text-light mt-2" style="background:#8b5cf6">DEVELOPER</span>
-                        </div>
-                        <div class="col-md-6 mb-3 mb-md-0">
-                            <h4 class="text-warning fw-bold mb-1">Pham Tai</h4>
-                            <div class="mb-2">
-                                <span class="deposit-badge"><i class="fas fa-check-circle me-1"></i>Hạn mức bảo đảm: 3.000.000 VNĐ</span>
-                            </div>
-                            <div>
-                                <span class="tag-skill">Tool File</span>
-                                <span class="tag-skill">Bot Zalo</span>
-                                <span class="tag-skill">Kỹ thuật Server</span>
-                            </div>
-                        </div>
-                        <div class="col-md-4 border-start-md border-secondary ps-md-4">
-                            <div class="small text-secondary">Zalo liên hệ:</div>
-                            <div class="fw-bold text-info mb-2">0358482865</div>
-                            <a href="https://zalo.me/0358482865" target="_blank" class="btn-zalo"><i class="fas fa-comment me-1"></i>Liên hệ Zalo Pham Tai</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <!-- Dữ liệu JS sẽ tự động tạo khung ở đây -->
         </div>
     </div>
 
-    <!-- MODAL ĐĂNG NHẬP -->
-    <div class="modal fade" id="loginModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-dark text-light border-secondary">
-                <div class="modal-header border-secondary">
-                    <h5 class="modal-title">Đăng Nhập Tài Khoản</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label class="form-label">Tên đăng nhập / Email</label>
-                            <input type="text" class="form-control bg-secondary bg-opacity-25 text-light border-secondary">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Mật khẩu</label>
-                            <input type="password" class="form-control bg-secondary bg-opacity-25 text-light border-secondary">
-                        </div>
-                        <button type="submit" class="btn btn-warning w-100 fw-bold">Đăng Nhập</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL ĐĂNG KÝ -->
-    <div class="modal fade" id="registerModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-dark text-light border-secondary">
-                <div class="modal-header border-secondary">
-                    <h5 class="modal-title">Đăng Ký Thành Viên</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label class="form-label">Họ và Tên</label>
-                            <input type="text" class="form-control bg-secondary bg-opacity-25 text-light border-secondary">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Số điện thoại / Zalo</label>
-                            <input type="text" class="form-control bg-secondary bg-opacity-25 text-light border-secondary">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Mật khẩu</label>
-                            <input type="password" class="form-control bg-secondary bg-opacity-25 text-light border-secondary">
-                        </div>
-                        <button type="submit" class="btn btn-warning w-100 fw-bold">Tạo Tài Khoản</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL GỬI PHẢN ÁNH -->
-    <div class="modal fade" id="reportModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-dark text-light border-secondary">
-                <div class="modal-header border-secondary">
-                    <h5 class="modal-title text-danger"><i class="fas fa-exclamation-triangle me-2"></i>Gửi Phản Ánh / Hỗ Trợ</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label class="form-label">Thông tin đối tượng cần phản ánh (SĐT/STK)</label>
-                            <input type="text" class="form-control bg-secondary bg-opacity-25 text-light border-secondary" placeholder="Nhập thông tin...">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Nội dung chi tiết</label>
-                            <textarea class="form-control bg-secondary bg-opacity-25 text-light border-secondary" rows="3" placeholder="Mô tả vụ việc..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-danger w-100 fw-bold">Gửi Báo Cáo</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Bootstrap & Live Search JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- SCRIPT XỬ LÝ DỮ LIỆU & RENDER -->
     <script>
+        // CẤU HÌNH DANH SÁCH THÀNH VIÊN TẠI ĐÂY
+        // Khi có thành viên thực tế mới, bạn chỉ cần thêm 1 dòng thông tin vào mảng bên dưới.
+        const membersData = [
+            {
+                name: "Gia Bảo",
+                role: "ADMIN TỔNG",
+                roleClass: "role-admin",
+                icon: "fa-crown",
+                deposit: "2.500.000 VNĐ",
+                phone: "0964703874 (SON GIA BAO)",
+                zaloLink: "https://zalo.me/0964703874",
+                skills: ["Acc FF", "File - Aim - Reg", "Trung Gian GDTG"]
+            },
+            {
+                name: "Pham Tai",
+                role: "ADMIN KỸ THUẬT",
+                roleClass: "role-admin",
+                icon: "fa-code",
+                deposit: "3.000.000 VNĐ",
+                phone: "0358482865",
+                zaloLink: "https://zalo.me/0358482865",
+                skills: ["Tool File", "Bot Zalo", "Kỹ Thuật Server"]
+            }
+            // Muốn thêm Giao dịch viên thực tế mới, bạn thêm vào dạng:
+            // {
+            //     name: "Tên GDV Thật",
+            //     role: "GIAO DỊCH VIÊN",
+            //     roleClass: "role-gdv",
+            //     icon: "fa-user-check",
+            //     deposit: "500.000 VNĐ",
+            //     phone: "SĐT Chính Thức",
+            //     zaloLink: "https://zalo.me/SĐT",
+            //     skills: ["Dịch vụ 1", "Dịch vụ 2"]
+            // }
+        ];
+
+        // Hàm vẽ giao diện động từ mảng dữ liệu
+        function renderMembers() {
+            const container = document.getElementById('memberList');
+            container.innerHTML = membersData.map(m => `
+                <div class="col-12 member-item">
+                    <div class="member-card">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center mb-3 mb-md-0">
+                                <div class="avatar-box">
+                                    <div class="avatar-img"><i class="fas ${m.icon}"></i></div>
+                                    <div class="verified-tick"><i class="fas fa-check"></i></div>
+                                </div>
+                                <span class="role-badge ${m.roleClass} mt-2 d-inline-block">${m.role}</span>
+                            </div>
+                            <div class="col-md-6 mb-3 mb-md-0">
+                                <div class="d-flex align-items-center gap-2">
+                                    <h4 class="text-warning fw-bold mb-0">${m.name}</h4>
+                                    <i class="fas fa-check-circle text-primary"></i>
+                                </div>
+                                <div class="my-2">
+                                    <span class="deposit-badge"><i class="fas fa-shield-alt me-1"></i>Hạn mức: ${m.deposit}</span>
+                                </div>
+                                <div>
+                                    ${m.skills.map(s => `<span class="tag-skill">${s}</span>`).join('')}
+                                </div>
+                            </div>
+                            <div class="col-md-4 border-start-md border-secondary ps-md-4">
+                                <div class="small text-secondary">Zalo liên hệ:</div>
+                                <div class="fw-bold text-info mb-2">${m.phone}</div>
+                                <a href="${m.zaloLink}" target="_blank" class="btn-zalo"><i class="fas fa-comment me-1"></i>Liên hệ Zalo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Chạy hàm render khi trang load xong
+        document.addEventListener('DOMContentLoaded', renderMembers);
+
+        // Chức năng tìm kiếm nhanh
         document.getElementById('searchInput').addEventListener('keyup', function() {
             let filter = this.value.toLowerCase().trim();
             let items = document.querySelectorAll('.member-item');
@@ -332,4 +259,5 @@
         });
     </script>
 </body>
-</html>
+          </html>
+          
